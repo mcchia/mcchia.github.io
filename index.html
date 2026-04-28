@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ming Cat Chia — Product Manager & Product Ops</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070c1a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui%2Csans-serif' font-weight='800' font-size='13' fill='%234f8ef7'%3EMC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -433,7 +434,7 @@ section{position:relative;z-index:1}
 #experience{background:var(--bg)}
 .timeline{margin-top:3.5rem;position:relative;padding-left:2rem}
 .timeline::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:1px;
+  content:'';position:absolute;left:0;top:0.25rem;bottom:0;width:1px;
   background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 50%,var(--border) 100%);
 }
 .tl-item{
@@ -596,7 +597,7 @@ footer{
     background:rgba(7,12,26,0.97);backdrop-filter:blur(20px);
     border-bottom:1px solid var(--border);
     padding:0.5rem 1.25rem 1rem;
-    transform:translateY(-110%);transition:transform 0.3s ease;
+    transform:translateY(calc(-100% - 60px));transition:transform 0.3s ease;
     pointer-events:none;
   }
   .nav-links.open{transform:translateY(0);pointer-events:all}
@@ -613,9 +614,7 @@ footer{
   .section-wrap{padding:4rem 1.25rem}
   #hero{padding:5rem 1.25rem 3rem;min-height:auto}
   .hero-inner{gap:2.25rem}
-  .hero-right{height:340px;max-width:100%}
-  .dashboard-frame{width:240px;height:160px}
-  .a1,.a2,.a9{display:none}
+  .hero-right{display:none}
   .metric-num{font-size:2.2rem}
   .metric-card{padding:1.75rem 1.5rem}
   .case-card{padding:1.5rem}
@@ -626,7 +625,7 @@ footer{
   .timeline{padding-left:1.5rem}
   .tl-item{padding-left:1.5rem;margin-bottom:2rem}
   .tl-card{padding:1.25rem 1.4rem}
-  .tl-dot{left:-2rem}
+  .tl-dot{left:calc(-1.5rem - 6px)}
   .tl-header{flex-direction:column;align-items:flex-start;gap:0.4rem}
   .tl-dates{margin-top:0}
   .contact-inner{padding:4rem 1.25rem}
@@ -641,9 +640,6 @@ footer{
   .hero-name{font-size:2.2rem}
   .hero-h1{font-size:1.25rem}
   .hero-role{font-size:0.72rem}
-  .hero-right{height:300px}
-  .dashboard-frame{width:210px;height:140px}
-  .a3,.a4,.a8{display:none}
   .hero-ctas{gap:0.6rem;width:100%}
   .hero-ctas .btn-primary,.hero-ctas .btn-secondary{
     justify-content:center;flex:1 1 auto;min-width:140px;
@@ -680,7 +676,7 @@ footer{
 
 <!-- NAV -->
 <nav id="main-nav">
-  <div class="nav-logo">Ming Cat<span>.</span> Chia</div>
+  <div class="nav-logo">MC<span>.</span>Chia</div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <span class="nav-toggle-bar"></span>
     <span class="nav-toggle-bar"></span>
