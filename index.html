@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ming Cat Chia â€” Product Manager | SaaS, Marketplace, AI, Payments & Product Ops</title>
+<title>Ming Cat Chia - Product Manager | SaaS, Marketplace, AI, Payments & Product Ops</title>
 <meta name="description" content="Product Manager and Product Ops professional with experience across B2B SaaS, NFT marketplaces, subscription workflows, user management, payment-related marketplace flows, custodial wallets, AI products, and trust &amp; safety.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070c1a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui%2Csans-serif' font-weight='800' font-size='13' fill='%234f8ef7'%3EMC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -318,7 +318,7 @@ section{position:relative;z-index:1}
   display:flex;flex-direction:column;gap:1rem;
 }
 .case-card::after{
-  content:'View Case Study â†’';
+  content:'View Case Study ->';
   position:absolute;bottom:1.5rem;right:1.5rem;
   font-size:0.75rem;font-weight:600;color:var(--blue);
   opacity:0;transform:translateY(4px);
@@ -344,7 +344,7 @@ section{position:relative;z-index:1}
   border-radius:100px;color:var(--text2);
 }
 .case-card.wide{grid-column:1/-1}
-/* Modal responsive grids â€” collapse 2-col to single col on small screens */
+/* Modal responsive grids - collapse 2-col to single col on small screens */
 @media(max-width:560px){
   .modal-box > div[style*="grid-template-columns:1fr 1fr"]{
     grid-template-columns:1fr !important;
@@ -465,7 +465,7 @@ section{position:relative;z-index:1}
   font-size:0.79rem;color:var(--text2);padding-left:1rem;position:relative;line-height:1.5;
 }
 .tl-bullet::before{
-  content:'â–¸';position:absolute;left:0;color:var(--teal);font-size:0.7rem;top:0.05rem;
+  content:'>';position:absolute;left:0;color:var(--teal);font-size:0.7rem;top:0.05rem;
 }
 
 /* SKILLS */
@@ -641,6 +641,9 @@ footer{
   .hero-name{font-size:2.2rem}
   .hero-h1{font-size:1.25rem}
   .hero-role{font-size:0.72rem}
+  .hero-sub{font-size:0.9rem;line-height:1.65}
+  .hero-tags{gap:0.3rem}
+  .hero-tag{font-size:0.64rem;padding:0.2rem 0.5rem}
   .hero-ctas{gap:0.6rem;width:100%}
   .hero-ctas .btn-primary,.hero-ctas .btn-secondary{
     justify-content:center;flex:1 1 auto;min-width:140px;
@@ -650,6 +653,10 @@ footer{
   .metrics-grid{grid-template-columns:1fr;border-radius:12px}
   .metric-card{padding:1.5rem 1.25rem}
   .metric-num{font-size:2rem}
+  .case-h3{font-size:1.03rem}
+  .case-desc{font-size:0.8rem;line-height:1.6}
+  .case-tags,.case-chips{gap:0.28rem}
+  .chip,.case-tag{font-size:0.62rem}
   .skills-grid{grid-template-columns:1fr}
   .skill-card{padding:1.25rem}
   .principles{grid-template-columns:1fr}
@@ -660,6 +667,8 @@ footer{
   .contact-ctas a{justify-content:center;width:100%}
   .modal-overlay{padding:0.75rem}
   .modal-box{padding:1.4rem;border-radius:14px}
+  .modal-box h3{font-size:1.12rem !important;line-height:1.35}
+  .modal-box p{font-size:0.8rem !important;line-height:1.6 !important}
   .os-steps{grid-template-columns:repeat(2,1fr);row-gap:1.25rem;gap:0.5rem}
   .os-step-num{width:48px;height:48px;font-size:0.7rem}
   .os-step-title{font-size:0.7rem;margin-top:0.6rem}
@@ -698,7 +707,7 @@ footer{
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">Available for new opportunities Â· Singapore</div>
+      <div class="hero-badge">Available for new opportunities - Singapore</div>
       <h1 class="hero-name">Hi, I'm <span class="hero-name-accent">Ming Cat Chia</span></h1>
       <div class="hero-role">Product Manager · Product Ops · SaaS · Marketplaces · AI Products</div>
       <p class="hero-h1">Turning Complex SaaS, Marketplace, Payment, Wallet, and AI Workflows into <em>Shipped Products</em></p>
@@ -718,7 +727,7 @@ footer{
       <div class="hero-ctas">
         <a href="#cases" class="btn-primary">View Case Studies</a>
         <a href="#product-os" class="btn-secondary">Explore Product System</a>
-        <a href="project/uploads/Chia Ming Cat_2026.docx" download class="btn-link">Download CV â†“</a>
+        <a href="project/uploads/Chia Ming Cat_2026.docx" download class="btn-link">Download CV</a>
       </div>
     </div>
     <div class="hero-right">
@@ -771,15 +780,15 @@ footer{
         </div>
 
         <!-- Floating artifact cards -->
-        <div class="artifact a1"><span class="art-tag" style="color:var(--blue)">ðŸ“„ PRD</span><span class="art-label">Feature Brief v3</span><span class="art-sub">Status: Approved</span></div>
-        <div class="artifact a2"><span class="art-tag" style="color:var(--teal)">ðŸ“‹ Sprint Board</span><span class="art-label">Sprint 14</span><span class="art-sub">8/12 done</span></div>
-        <div class="artifact a3"><span class="art-tag" style="color:var(--violet)">ðŸ“– User Stories</span><span class="art-label">Onboarding Flow</span><span class="art-sub">6 stories</span></div>
-        <div class="artifact a4"><span class="art-tag" style="color:var(--teal)">âœ… QA Sign-off</span><span class="art-label">Release 2.4.1</span><span class="art-sub">All tests passed</span></div>
-        <div class="artifact a5"><span class="art-tag" style="color:var(--blue)">ðŸš€ Launch Plan</span><span class="art-label">Mintology v1</span><span class="art-sub">T-3 days</span></div>
-        <div class="artifact a6"><span class="art-tag" style="color:var(--violet)">ðŸ“Š Adoption</span><span class="art-label">Metrics</span><span class="art-sub">+25% this month</span></div>
-        <div class="artifact a7"><span class="art-tag" style="color:var(--teal)">ðŸ”¬ A/B Test</span><span class="art-label">CTA Variant B</span><span class="art-sub">+12% CVR</span></div>
-        <div class="artifact a8"><span class="art-tag" style="color:var(--blue)">ðŸ‘¥ Stakeholder</span><span class="art-label">Alignment</span><span class="art-sub">C-suite sign-off</span></div>
-        <div class="artifact a9"><span class="art-tag" style="color:var(--violet)">ðŸ“š Product Docs</span><span class="art-label">V2 Knowledge Base</span><span class="art-sub">Updated</span></div>
+        <div class="artifact a1"><span class="art-tag" style="color:var(--blue)">[PRD]</span><span class="art-label">Feature Brief v3</span><span class="art-sub">Status: Approved</span></div>
+        <div class="artifact a2"><span class="art-tag" style="color:var(--teal)">[BOARD]</span><span class="art-label">Sprint 14</span><span class="art-sub">8/12 done</span></div>
+        <div class="artifact a3"><span class="art-tag" style="color:var(--violet)">[STORIES]</span><span class="art-label">Onboarding Flow</span><span class="art-sub">6 stories</span></div>
+        <div class="artifact a4"><span class="art-tag" style="color:var(--teal)">[QA]</span><span class="art-label">Release 2.4.1</span><span class="art-sub">All tests passed</span></div>
+        <div class="artifact a5"><span class="art-tag" style="color:var(--blue)">[LAUNCH]</span><span class="art-label">Mintology v1</span><span class="art-sub">T-3 days</span></div>
+        <div class="artifact a6"><span class="art-tag" style="color:var(--violet)">[ADOPTION]</span><span class="art-label">Metrics</span><span class="art-sub">+25% this month</span></div>
+        <div class="artifact a7"><span class="art-tag" style="color:var(--teal)">[A/B TEST]</span><span class="art-label">CTA Variant B</span><span class="art-sub">+12% CVR</span></div>
+        <div class="artifact a8"><span class="art-tag" style="color:var(--blue)">[STAKEHOLDER]</span><span class="art-label">Alignment</span><span class="art-sub">C-suite sign-off</span></div>
+        <div class="artifact a9"><span class="art-tag" style="color:var(--violet)">[DOCS]</span><span class="art-label">V2 Knowledge Base</span><span class="art-sub">Updated</span></div>
       </div>
     </div>
   </div>
@@ -792,7 +801,7 @@ footer{
   <div class="section-wrap">
     <div class="section-label">Impact Snapshot</div>
     <h2 class="section-h2">Measurable outcomes, not just responsibilities.</h2>
-    <p class="section-sub">Numbers that reflect real work done â€” faster delivery, better adoption, and stronger operations.</p>
+    <p class="section-sub">Numbers that reflect real work done - faster delivery, better adoption, and stronger operations.</p>
     <div class="metrics-grid">
       <div class="metric-card mc-blue">
         <div class="metric-num num-blue" data-target="37.5" data-suffix="%">0%</div>
@@ -917,7 +926,7 @@ footer{
         <h3 class="case-h3">Reducing Feature Lead Time by 37.5%</h3>
         <p class="case-desc">Improved execution rhythm by reducing context switching, tightening ownership, and improving sprint structure across SaaS, marketplace, dashboard, and AI feature delivery.</p>
         <div class="case-chips">
-          <span class="chip">4 weeks â†’ 2.5 weeks</span>
+          <span class="chip">4 weeks -> 2.5 weeks</span>
           <span class="chip">Developer-owned workstreams</span>
           <span class="chip">Sprint retrospectives</span>
           <span class="chip">Delivery optimization</span>
@@ -948,7 +957,7 @@ footer{
 <!-- Case Study Modals -->
 <div class="modal-overlay" id="modal-cs1" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs1')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs1')">X</button>
     <div class="case-tags" style="margin-bottom:1rem">
       <span class="case-tag blue">Product Management</span><span class="case-tag teal">0-to-1 SaaS</span>
     </div>
@@ -973,7 +982,7 @@ footer{
 
 <div class="modal-overlay" id="modal-cs2" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs2')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs2')">X</button>
     <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Marketplace Transactions</span><span class="case-tag teal">Custodial Wallets</span></div>
     <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Mintable Marketplace — Purchase, Bidding, Payment &amp; Custodial Wallet Workflows</h3>
     <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">At Mintable, I worked on marketplace product workflows involving NFT purchases, bidding, payment-related transaction states, buyer/seller journeys, and custodial wallet requirements. The work required balancing user experience, transaction clarity, asset access, marketplace trust, and operational support.</p>
@@ -1004,7 +1013,7 @@ footer{
 
 <div class="modal-overlay" id="modal-cs3" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs3')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs3')">X</button>
     <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">AI Product</span><span class="case-tag teal">Trust &amp; Safety</span></div>
     <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Launching AI Search &amp; AI-Based DMCA Detection</h3>
     <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Launched AI-powered search and AI-based DMCA photo detection for Mintable, improving marketplace discovery, creator protection, platform trust, and product intelligence. I owned PRD writing, QA coordination, and product documentation for both launches.</p>
@@ -1022,10 +1031,10 @@ footer{
 
 <div class="modal-overlay" id="modal-cs4" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs4')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs4')">X</button>
     <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Growth Product</span><span class="case-tag teal">Experimentation</span></div>
     <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Increasing Product Adoption by 25%</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Adoption wasn't growing fast enough after launch. I supported a systematic experimentation program targeting key friction points in the user journey â€” from landing page messaging to onboarding CTA copy to documentation structure.</p>
+    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Adoption wasn't growing fast enough after launch. I supported a systematic experimentation program targeting key friction points in the user journey - from landing page messaging to onboarding CTA copy to documentation structure.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
         <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Experiments Run</div>
@@ -1041,20 +1050,20 @@ footer{
 
 <div class="modal-overlay" id="modal-cs5" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs5')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs5')">X</button>
     <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Product Strategy</span><span class="case-tag violet">Web3</span></div>
     <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Sunsetting ERC721Ex with Product Judgment</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Not every product should be maintained forever. ERC721Ex had declining market relevance, rising maintenance costs, and diminishing user engagement. I worked with C-suite to evaluate the full cost-value picture and make the strategic call to sunset â€” freeing team resources for higher-value work.</p>
+    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Not every product should be maintained forever. ERC721Ex had declining market relevance, rising maintenance costs, and diminishing user engagement. I worked with C-suite to evaluate the full cost-value picture and make the strategic call to sunset, freeing team resources for higher-value work.</p>
     <div style="background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--violet);border-radius:10px;padding:1.25rem;margin-top:0.5rem">
       <div style="font-size:0.65rem;color:var(--violet);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Why this matters</div>
-      <div style="font-size:0.85rem;color:var(--text2);line-height:1.65">Product judgment isn't only about what to build â€” it's about what not to maintain. This decision protected team focus and freed resources for Mintology's growth phase.</div>
+      <div style="font-size:0.85rem;color:var(--text2);line-height:1.65">Product judgment isn't only about what to build - it's about what not to maintain. This decision protected team focus and freed resources for Mintology's growth phase.</div>
     </div>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-cs6" onclick="closeModal(event)">
   <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs6')">âœ•</button>
+    <button class="modal-close" onclick="closeModal(null,'cs6')">X</button>
     <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Agile Delivery</span><span class="case-tag teal">Product Ops</span></div>
     <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Reducing Feature Lead Time by 37.5%</h3>
     <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">The team was delivering features in 4 weeks on average. I addressed ownership ambiguity, context switching, and handoff friction to reduce lead time to 2.5 weeks across marketplace, subscription, dashboard, and AI feature delivery.</p>
@@ -1213,7 +1222,7 @@ footer{
   <div class="section-wrap">
     <div class="section-label">Experience</div>
     <h2 class="section-h2">Where the work happened.</h2>
-    <p class="section-sub">From early-stage startups to global consulting firms â€” across product, operations, and risk.</p>
+    <p class="section-sub">From early-stage startups to global consulting firms - across product, operations, and risk.</p>
     <div class="timeline">
 
       <div class="tl-item">
@@ -1224,7 +1233,7 @@ footer{
               <div class="tl-company">Mintable &amp; Mintology</div>
               <div class="tl-role">Scrum Master cum Product Owner</div>
             </div>
-            <div class="tl-dates">Mar 2022 â€“ Present</div>
+            <div class="tl-dates">Mar 2022 - Present</div>
           </div>
           <p class="tl-desc">Led product ownership and product operations across Mintable and Mintology, covering B2B SaaS, NFT marketplace workflows, subscription management, user/account dashboards, payment-related transaction flows, custodial wallet requirements, AI feature launches, onboarding, activation, and partner-facing product work.</p>
           <div class="tl-bullets">
@@ -1247,9 +1256,9 @@ footer{
               <div class="tl-company">Freelance</div>
               <div class="tl-role" style="color:var(--teal)">Vietnamese-English Translator &amp; QA Analyst</div>
             </div>
-            <div class="tl-dates">Nov 2020 â€“ Present</div>
+            <div class="tl-dates">Nov 2020 - Present</div>
           </div>
-          <p class="tl-desc">Optimized legal, research, and media translation workflows â€” reducing production time by 50% through specialized tools and systematic process improvement.</p>
+          <p class="tl-desc">Optimized legal, research, and media translation workflows, reducing production time by 50% through specialized tools and systematic process improvement.</p>
         </div>
       </div>
 
@@ -1261,7 +1270,7 @@ footer{
               <div class="tl-company">Accenture</div>
               <div class="tl-role">Risk Operations Analyst</div>
             </div>
-            <div class="tl-dates">Dec 2020 â€“ Feb 2022</div>
+            <div class="tl-dates">Dec 2020 - Feb 2022</div>
           </div>
           <p class="tl-desc">Handled high-volume fraud detection cases involving scam accounts and scam listings using internal Facebook tools and pattern analysis.</p>
           <div class="tl-bullets">
@@ -1280,7 +1289,7 @@ footer{
               <div class="tl-company">Student Coin</div>
               <div class="tl-role" style="color:var(--violet)">Community Relations Manager</div>
             </div>
-            <div class="tl-dates">Nov 2020 â€“ Sep 2021</div>
+            <div class="tl-dates">Nov 2020 - Sep 2021</div>
           </div>
           <p class="tl-desc">Managed Telegram and Facebook communities for an early-stage crypto startup, increasing participation through trust-building and responsive community operations.</p>
           <div class="tl-bullets">
@@ -1299,7 +1308,7 @@ footer{
               <div class="tl-company">KOSH Consulting Group</div>
               <div class="tl-role">Analyst Intern</div>
             </div>
-            <div class="tl-dates">Oct 2020 â€“ Jan 2021</div>
+            <div class="tl-dates">Oct 2020 - Jan 2021</div>
           </div>
           <p class="tl-desc">Led the Vietnam Norming Project and attracted 150+ sign-ups in 3 days through targeted marketing and research design.</p>
         </div>
@@ -1313,7 +1322,7 @@ footer{
               <div class="tl-company">Bain &amp; Company</div>
               <div class="tl-role" style="color:var(--teal)">Translator &amp; Data Analyst</div>
             </div>
-            <div class="tl-dates">May 2020 â€“ Oct 2020</div>
+            <div class="tl-dates">May 2020 - Oct 2020</div>
           </div>
           <p class="tl-desc">Supported consulting projects involving Cargill and KFC Vietnam through literature reviews, translation, research, and data analysis.</p>
         </div>
@@ -1330,12 +1339,12 @@ footer{
   <div class="section-wrap">
     <div class="section-label">Skills</div>
     <h2 class="section-h2">Capabilities by domain.</h2>
-    <p class="section-sub">Not a list of buzzwords â€” a map of what I actually do and deliver.</p>
+    <p class="section-sub">Not a list of buzzwords - a map of what I actually do and deliver.</p>
     <div class="skills-grid">
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-blue">ðŸ“‹</div>
+          <div class="skill-icon si-blue">PM</div>
           <div class="skill-card-title">Product Management</div>
         </div>
         <div class="skill-tags">
@@ -1349,7 +1358,7 @@ footer{
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-teal">âš™ï¸</div>
+          <div class="skill-icon si-teal">OPS</div>
           <div class="skill-card-title">Product Ops</div>
         </div>
         <div class="skill-tags">
@@ -1362,7 +1371,7 @@ footer{
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-violet">ðŸ”„</div>
+          <div class="skill-icon si-violet">SYS</div>
           <div class="skill-card-title">Commercial Product Systems</div>
         </div>
         <div class="skill-tags">
@@ -1375,7 +1384,7 @@ footer{
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-teal">ðŸ“ˆ</div>
+          <div class="skill-icon si-teal">GROW</div>
           <div class="skill-card-title">Growth &amp; Experimentation</div>
         </div>
         <div class="skill-tags">
@@ -1388,7 +1397,7 @@ footer{
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-blue">ðŸ¤–</div>
+          <div class="skill-icon si-blue">AI</div>
           <div class="skill-card-title">AI, Web3 &amp; Trust Domains</div>
         </div>
         <div class="skill-tags">
@@ -1402,7 +1411,7 @@ footer{
 
       <div class="skill-card">
         <div class="skill-card-header">
-          <div class="skill-icon si-violet">ðŸ› ï¸</div>
+          <div class="skill-icon si-violet">TOOLS</div>
           <div class="skill-card-title">Tools</div>
         </div>
         <div class="skill-tags">
@@ -1432,7 +1441,7 @@ footer{
         <!-- Small floating card over photo -->
         <div style="position:absolute;bottom:2rem;left:-1.5rem;background:rgba(13,19,38,0.95);border:1px solid var(--border2);border-radius:10px;padding:0.85rem 1rem;backdrop-filter:blur(12px)">
           <div style="font-size:0.62rem;color:var(--text3);font-family:var(--mono);margin-bottom:0.25rem">Currently based in</div>
-          <div style="font-size:0.85rem;font-weight:600">Singapore ðŸ‡¸ðŸ‡¬</div>
+          <div style="font-size:0.85rem;font-weight:600">Singapore</div>
           <div style="font-size:0.7rem;color:var(--teal);margin-top:0.15rem;font-family:var(--mono)">Open to opportunities</div>
         </div>
       </div>
@@ -1509,12 +1518,12 @@ footer{
 </section>
 
 <footer>
-  <span>Â© 2026 Ming Cat Chia</span>
+  <span>© 2026 Ming Cat Chia</span>
   <span style="font-family:var(--mono)">Product Manager · Product Ops · SaaS · Marketplaces · AI Products</span>
 </footer>
 
 <script>
-// â”€â”€ Nav active state on scroll â”€â”€
+// -- Nav active state on scroll --
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 function updateNav() {
@@ -1529,7 +1538,7 @@ function updateNav() {
 window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
 
-// â”€â”€ Mobile hamburger menu â”€â”€
+// -- Mobile hamburger menu --
 const navToggle = document.getElementById('nav-toggle');
 const navLinksEl = document.getElementById('nav-links');
 function closeMenu(){
@@ -1545,7 +1554,7 @@ navToggle.addEventListener('click', () => {
 navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
 
-// â”€â”€ Metric counter animation â”€â”€
+// -- Metric counter animation --
 function animateCounters() {
   document.querySelectorAll('[data-target]').forEach(el => {
     const target = parseFloat(el.dataset.target);
@@ -1574,13 +1583,13 @@ const io = new IntersectionObserver(entries => {
 }, {threshold: 0.2});
 io.observe(impactSection);
 
-// â”€â”€ Product OS step switcher â”€â”€
+// -- Product OS step switcher --
 function setOsStep(idx) {
   document.querySelectorAll('.os-step').forEach((s,i) => s.classList.toggle('active', i===idx));
   document.querySelectorAll('.os-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
 }
 
-// â”€â”€ Case study modals â”€â”€
+// -- Case study modals --
 function openModal(id) {
   const m = document.getElementById('modal-' + id);
   if (m) { m.classList.add('open'); document.body.style.overflow='hidden'; }
