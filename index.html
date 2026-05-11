@@ -101,6 +101,7 @@ nav{
 
 /* SECTIONS */
 section{position:relative;z-index:1}
+section[id], .case-study-anchor{scroll-margin-top:110px}
 
 /* HERO */
 #hero{
@@ -345,11 +346,44 @@ section{position:relative;z-index:1}
   border-radius:100px;color:var(--text2);
 }
 .case-card.wide{grid-column:1/-1}
-.deep-dive-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.25rem}
-.deep-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.6rem;
+
+/* CASE STUDY ACCORDION */
+.case-accordion{display:flex;flex-direction:column;gap:0.95rem;margin-top:2rem}
+.case-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  overflow:hidden;transition:border-color 0.25s, background 0.25s, box-shadow 0.25s;
 }
-.deep-card.wide{grid-column:1/-1}
+.case-item:hover{border-color:var(--border2);background:var(--surface2)}
+.case-item.open{border-color:rgba(79,142,247,0.5);box-shadow:0 0 24px rgba(79,142,247,0.12)}
+.case-head{padding:1.2rem 1.2rem 1rem}
+.case-summary{font-size:0.83rem;color:var(--text2);line-height:1.6;margin-top:0.55rem}
+.case-meta{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;margin-top:0.75rem;flex-wrap:wrap}
+.impact-pill{
+  font-size:0.64rem;font-family:var(--mono);font-weight:600;color:var(--teal);
+  border:1px solid rgba(34,211,200,0.35);background:rgba(34,211,200,0.08);
+  border-radius:999px;padding:0.22rem 0.58rem;
+}
+.case-toggle{
+  margin-top:0.8rem;background:var(--bg);color:var(--text);border:1px solid var(--border2);
+  border-radius:8px;padding:0.52rem 0.82rem;font-size:0.76rem;font-weight:600;cursor:pointer;
+  transition:all 0.22s;
+}
+.case-toggle:hover{border-color:var(--blue);color:var(--blue)}
+.case-body-wrap{
+  max-height:0;overflow:hidden;transition:max-height 0.35s ease;
+}
+.case-item.open .case-body-wrap{max-height:1400px}
+.case-body{padding:0 1.2rem 1.2rem}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem}
+.case-block{
+  background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0.85rem;
+}
+.case-label{
+  font-size:0.64rem;color:var(--text3);font-family:var(--mono);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.45rem;
+}
+.case-text{font-size:0.8rem;color:var(--text2);line-height:1.55}
+.case-list{display:flex;flex-direction:column;gap:0.35rem}
 
 /* BEST-FIT ROLES */
 #best-fit{background:var(--bg2)}
@@ -364,10 +398,23 @@ section{position:relative;z-index:1}
 #commercial-systems{background:var(--bg)}
 .systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.25rem}
 .system-card{
+  position:relative;overflow:hidden;
   background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  padding:1.1rem 1rem;transition:all 0.25s;
+  padding:1.1rem 1rem;
+  transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
-.system-card:hover{border-color:var(--border2);background:var(--surface2)}
+.system-card::before{
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:linear-gradient(135deg,rgba(79,142,247,0.12),rgba(34,211,200,0.07));
+  transition:opacity 0.3s ease;
+}
+.system-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(79,142,247,0.45);
+  background:rgba(79,142,247,0.06);
+  box-shadow:0 0 22px rgba(79,142,247,0.14);
+}
+.system-card:hover::before{opacity:1}
 .system-title{
   font-family:'Plus Jakarta Sans',sans-serif;font-size:0.92rem;font-weight:700;
   letter-spacing:-0.01em;margin-bottom:0.45rem;
@@ -609,7 +656,6 @@ footer{
   .hero-right{height:380px;order:2;max-width:520px;margin:0 auto;width:100%}
   .metrics-grid{grid-template-columns:1fr 1fr}
   .cases-grid{grid-template-columns:1fr}
-  .deep-dive-grid{grid-template-columns:1fr}
   .case-card.wide{grid-column:auto}
   .os-steps{grid-template-columns:repeat(3,1fr);row-gap:1.5rem}
   .os-steps::before{display:none}
@@ -651,6 +697,8 @@ footer{
   .metric-card{padding:1.75rem 1.5rem}
   .case-card{padding:1.5rem}
   .case-card::after{position:static;opacity:1;transform:none;margin-top:0.5rem}
+  .case-grid{grid-template-columns:1fr}
+  .case-head,.case-body{padding-left:1rem;padding-right:1rem}
   .modal-overlay{padding:1rem}
   .modal-box{padding:1.75rem;max-height:88vh}
   .systems-grid{grid-template-columns:1fr}
@@ -937,79 +985,150 @@ footer{
   <div class="section-wrap">
     <div class="section-label">Case Studies</div>
     <h2 class="section-h2">Selected Product Case Studies</h2>
-    <p class="section-sub">Compact highlights. Click any card to jump to the deep-dive details below.</p>
-    <div class="cases-grid">
-      <a class="case-card" href="#deep-cs1">
-        <div class="case-tags"><span class="case-tag blue">Product Management</span><span class="case-tag teal">Product Ops</span></div>
-        <h3 class="case-h3">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
-        <p class="case-desc">Built the Mintology product ecosystem from concept to launch, including subscription workflows, user/account dashboards, onboarding, documentation, QA readiness, and launch coordination.</p>
-      </a>
-      <a class="case-card" href="#deep-cs2">
-        <div class="case-tags"><span class="case-tag blue">Marketplace Transactions</span><span class="case-tag teal">Wallet Product</span></div>
-        <h3 class="case-h3">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
-        <p class="case-desc">Owned product requirements and delivery coordination for NFT purchase, bidding, payment-related transaction states, buyer/seller journeys, and custodial wallet requirements.</p>
-      </a>
-      <a class="case-card" href="#deep-cs3">
-        <div class="case-tags"><span class="case-tag blue">AI Product</span><span class="case-tag teal">Trust &amp; Safety</span></div>
-        <h3 class="case-h3">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
-        <p class="case-desc">Launched AI-powered search and AI-based DMCA detection to improve marketplace discovery, creator protection, and platform trust workflows.</p>
-      </a>
-      <a class="case-card" href="#deep-cs4">
-        <div class="case-tags"><span class="case-tag blue">Growth Product</span><span class="case-tag teal">Experimentation</span></div>
-        <h3 class="case-h3">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
-        <p class="case-desc">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking.</p>
-      </a>
-      <a class="case-card" href="#deep-cs6">
-        <div class="case-tags"><span class="case-tag blue">Product Ops</span><span class="case-tag teal">Delivery System</span></div>
-        <h3 class="case-h3">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
-        <p class="case-desc">Reduced average feature delivery from 4 weeks to 2.5 weeks through clearer ownership, sprint structure, blocker removal, and centralized visibility.</p>
-      </a>
-      <a class="case-card wide" href="#deep-cs5">
-        <div class="case-tags"><span class="case-tag blue">Product Strategy</span><span class="case-tag violet">Lifecycle Management</span></div>
-        <h3 class="case-h3">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
-        <p class="case-desc">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, maintenance burden, and business value.</p>
-      </a>
-    </div>
-  </div>
-</section>
+    <p class="section-sub">A focused look at product systems I owned across SaaS, marketplaces, payment-linked workflows, AI, growth, and product operations.</p>
+    <div class="case-accordion">
+      <article class="case-item open case-study-anchor" id="case-mintology">
+        <div class="case-head">
+          <h3 class="case-h3">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
+          <p class="case-summary">Built the Mintology product ecosystem from concept to launch across subscriptions, account management, onboarding, documentation, QA, and launch readiness.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">B2B SaaS</span><span class="case-tag teal">Subscription Workflows</span><span class="case-tag">User Management</span><span class="case-tag">Launch Ops</span><span class="case-tag">Product Docs</span></div>
+            <span class="impact-pill">25% adoption improvement</span>
+          </div>
+          <button class="case-toggle" aria-expanded="true" aria-controls="case-panel-1">Collapse Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-1">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">Mintology needed a structured B2B SaaS product system for launch, onboarding, account visibility, subscription workflows, and customer activation.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Scrum Master cum Product Owner. Owned PRDs, user stories, acceptance criteria, sprint coordination, QA alignment, release notes, product documentation, stakeholder alignment, and launch readiness.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">Subscription workflow requirements</div><div class="tl-bullet">User/account management dashboard requirements</div><div class="tl-bullet">Landing page and onboarding flows</div><div class="tl-bullet">Product documentation and activation tracking</div><div class="tl-bullet">Launch coordination</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Needed enough structure for enterprise-facing demos while keeping scope realistic for a small engineering team.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">Structured PRDs, user stories, acceptance criteria, ClickUp workflows, QA coordination, release notes, documentation, onboarding content, and cross-functional launch alignment.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">Full B2B SaaS product ecosystem shipped. Adoption improved by 25% through campaign-led activation, onboarding improvements, documentation, product education, and activation tracking.</p></div>
+            </div>
+          </div>
+        </div>
+      </article>
 
-<section id="deep-dives">
-  <div class="section-wrap">
-    <div class="section-label">Case Studies</div>
-    <h2 class="section-h2">Deep-Dive Case Studies</h2>
-    <p class="section-sub">Expanded details on ownership scope, complexity, execution, and outcomes.</p>
-    <div class="deep-dive-grid">
-      <article class="deep-card" id="deep-cs1">
-        <h3 class="case-h3">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
-        <p class="case-desc">Built the Mintology product ecosystem from concept to launch, covering landing pages, subscription workflows, user/account management dashboards, onboarding, product positioning, documentation, QA readiness, and launch coordination.</p>
-        <p class="case-desc"><strong>Role:</strong> Scrum Master cum Product Owner — owned PRDs, user stories, acceptance criteria, sprint coordination, QA alignment, release notes, product documentation, stakeholder alignment, and launch readiness.</p>
-        <p class="case-desc"><strong>Outcome:</strong> Full B2B SaaS product ecosystem shipped, with adoption improved by 25% through campaign-led activation, onboarding improvements, documentation, product education, and activation tracking.</p>
+      <article class="case-item case-study-anchor" id="case-marketplace">
+        <div class="case-head">
+          <h3 class="case-h3">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
+          <p class="case-summary">Owned product requirements and delivery coordination for marketplace workflows involving NFT purchases, bidding, payment-related states, buyer/seller journeys, and custodial wallet requirements.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">Marketplace</span><span class="case-tag teal">Payment-Linked UX</span><span class="case-tag">Bidding</span><span class="case-tag">Custodial Wallets</span><span class="case-tag">Buyer/Seller Flows</span></div>
+            <span class="impact-pill">QA and release readiness</span>
+          </div>
+          <button class="case-toggle" aria-expanded="false" aria-controls="case-panel-2">Expand Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-2">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">Marketplace flows needed clarity across NFT purchases, bidding, payment-related transaction states, asset access, buyer/seller interactions, and custodial wallet requirements.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Owned product requirements and delivery coordination. Translated marketplace, payment-related, wallet, and UX requirements into PRDs, user stories, acceptance criteria, QA flows, documentation, release notes, and cross-functional delivery plans.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">NFT purchase journeys and bidding workflows</div><div class="tl-bullet">Payment-related transaction states</div><div class="tl-bullet">Buyer/seller marketplace interactions</div><div class="tl-bullet">Post-purchase experience and custodial wallet requirements</div><div class="tl-bullet">Support visibility and transaction clarity</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Risk-sensitive flows required transaction clarity, asset-access confidence, payment-state visibility, and support readiness across engineering, QA, support, and ops.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">Structured requirements, QA-ready logic, user stories, acceptance criteria, documentation, release notes, stakeholder alignment, and delivery coordination.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">Translated complex marketplace flows into structured requirements, QA-ready logic, and release documentation without overstating technical engineering ownership.</p></div>
+            </div>
+          </div>
+        </div>
       </article>
-      <article class="deep-card" id="deep-cs2">
-        <h3 class="case-h3">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
-        <p class="case-desc">Owned product requirements and delivery coordination for Mintable marketplace workflows involving NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller journeys, post-purchase experience, and custodial wallet requirements.</p>
-        <p class="case-desc"><strong>Role:</strong> Translated marketplace, payment-related, wallet, and user experience requirements into PRDs, user stories, acceptance criteria, QA flows, product documentation, release notes, and cross-functional delivery plans.</p>
-        <p class="case-desc"><strong>Complexity:</strong> These workflows were risk-sensitive because users needed transaction clarity, asset access, payment-state confidence, and support visibility. Translated these complex flows into structured requirements, QA-ready logic, and release documentation.</p>
+
+      <article class="case-item case-study-anchor" id="case-ai">
+        <div class="case-head">
+          <h3 class="case-h3">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
+          <p class="case-summary">Launched AI-powered search and AI-based DMCA photo detection to improve marketplace discovery, creator protection, and platform trust.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">AI Search</span><span class="case-tag teal">DMCA Detection</span><span class="case-tag">Trust &amp; Safety</span><span class="case-tag">Marketplace Discovery</span><span class="case-tag">Creator Protection</span></div>
+            <span class="impact-pill">AI feature launches shipped</span>
+          </div>
+          <button class="case-toggle" aria-expanded="false" aria-controls="case-panel-3">Expand Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-3">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">Mintable needed stronger discovery and creator-protection workflows as the marketplace scaled.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Owned PRD writing, QA coordination, product documentation, release notes, and launch alignment across product, engineering, QA, and operations.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">AI-powered search requirements</div><div class="tl-bullet">AI-based DMCA photo detection requirements</div><div class="tl-bullet">Creator protection workflows</div><div class="tl-bullet">Marketplace discovery logic</div><div class="tl-bullet">Trust and safety documentation</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Had to balance marketplace usability, creator protection, fraud/risk thinking, and implementation clarity.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">PRDs, user stories, acceptance criteria, QA coordination, documentation, release notes, and cross-functional launch alignment.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">AI-powered search and AI-based DMCA detection launched, strengthening marketplace discovery and trust workflows.</p></div>
+            </div>
+          </div>
+        </div>
       </article>
-      <article class="deep-card" id="deep-cs3">
-        <h3 class="case-h3">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
-        <p class="case-desc">Launched AI-powered search and AI-based DMCA photo detection for Mintable, improving marketplace discovery, creator protection, product intelligence, and trust workflows.</p>
-        <p class="case-desc"><strong>Role:</strong> Owned PRD writing, QA coordination, product documentation, release notes, and launch alignment across product, engineering, QA, and operations.</p>
+
+      <article class="case-item case-study-anchor" id="case-growth">
+        <div class="case-head">
+          <h3 class="case-h3">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
+          <p class="case-summary">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">Growth Product</span><span class="case-tag teal">Activation</span><span class="case-tag">Onboarding</span><span class="case-tag">A/B Testing</span><span class="case-tag">Product Education</span></div>
+            <span class="impact-pill">25% adoption improvement</span>
+          </div>
+          <button class="case-toggle" aria-expanded="false" aria-controls="case-panel-4">Expand Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-4">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">Mintology needed stronger activation after launch around onboarding, product education, messaging, and user understanding.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">Landing page messaging</div><div class="tl-bullet">Onboarding CTA variants</div><div class="tl-bullet">Product education copy and feature explanation</div><div class="tl-bullet">Documentation structure and activation tracking</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Needed users to understand product value quickly enough to activate, not just visit.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">Messaging improvements, onboarding copy, documentation restructuring, user education content, campaign support, and feedback analysis from CS, Zendesk, and interviews.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">25% improvement in adoption tracked through activation metrics, contract deployment, and NFT minting-related user actions.</p></div>
+            </div>
+          </div>
+        </div>
       </article>
-      <article class="deep-card" id="deep-cs4">
-        <h3 class="case-h3">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
-        <p class="case-desc">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking, improving Mintology adoption by 25% after the NFT Renaissance campaign.</p>
-        <p class="case-desc"><strong>Experiments:</strong> Landing page messaging, onboarding CTA variants, product education copy, documentation structure, and feature explanation.</p>
-        <p class="case-desc"><strong>Result:</strong> 25% improvement in product adoption tracked through activation metrics, contract deployment, and NFT minting-related user actions.</p>
+
+      <article class="case-item case-study-anchor" id="case-erc721">
+        <div class="case-head">
+          <h3 class="case-h3">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
+          <p class="case-summary">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, operating cost, maintenance burden, and business value.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">Product Strategy</span><span class="case-tag teal">Prioritization</span><span class="case-tag">Sunset Decision</span><span class="case-tag">C-Suite Alignment</span><span class="case-tag">Resource Focus</span></div>
+            <span class="impact-pill">Maintenance burden reduced</span>
+          </div>
+          <button class="case-toggle" aria-expanded="false" aria-controls="case-panel-5">Expand Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-5">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">ERC721Ex required ongoing maintenance cost while market trend and product value were declining.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Partnered with C-suite leadership to evaluate product value, market direction, maintenance cost, and opportunity cost.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">Product documentation and stakeholder alignment</div><div class="tl-bullet">Sunset communication support</div><div class="tl-bullet">Risk and maintenance analysis</div><div class="tl-bullet">Roadmap prioritization support</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Balanced existing product investment against future value, operating fees, market decline, and team focus.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">Structured decision support, product documentation, communication alignment, and sunset planning support.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">ERC721Ex was sunset after C-suite decision, protecting product focus and reducing maintenance burden.</p></div>
+            </div>
+          </div>
+        </div>
       </article>
-      <article class="deep-card wide" id="deep-cs5">
-        <h3 class="case-h3">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
-        <p class="case-desc">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, operating cost, maintenance burden, and business value.</p>
-        <p class="case-desc"><strong>Why it matters:</strong> Knowing what not to build or maintain is as important as launching new products.</p>
-      </article>
-      <article class="deep-card wide" id="deep-cs6">
-        <h3 class="case-h3">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
-        <p class="case-desc">Reduced average feature delivery time from 4 weeks to 2.5 weeks by clarifying ownership, reducing context switching, improving sprint structure, centralizing ClickUp visibility, and removing stakeholder blockers.</p>
+
+      <article class="case-item case-study-anchor" id="case-ops">
+        <div class="case-head">
+          <h3 class="case-h3">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
+          <p class="case-summary">Reduced average feature delivery time from 4 weeks to 2.5 weeks by improving ownership, sprint structure, ClickUp visibility, and blocker removal.</p>
+          <div class="case-meta">
+            <div class="case-tags"><span class="case-tag blue">Product Ops</span><span class="case-tag teal">Agile Delivery</span><span class="case-tag">ClickUp</span><span class="case-tag">Sprint Planning</span><span class="case-tag">Delivery Improvement</span></div>
+            <span class="impact-pill">37.5% faster lead time</span>
+          </div>
+          <button class="case-toggle" aria-expanded="false" aria-controls="case-panel-6">Expand Case Study</button>
+        </div>
+        <div class="case-body-wrap" id="case-panel-6">
+          <div class="case-body">
+            <div class="case-grid">
+              <div class="case-block"><div class="case-label">Context</div><p class="case-text">Feature delivery was slowed by unclear ownership, stakeholder alignment issues, context switching, and limited visibility across workstreams.</p></div>
+              <div class="case-block"><div class="case-label">My Role</div><p class="case-text">Facilitated Scrum ceremonies, introduced retrospectives, clarified ownership, improved ClickUp workflows, coordinated QA cycles, and removed blockers.</p></div>
+              <div class="case-block"><div class="case-label">Product Surfaces Owned</div><div class="case-list"><div class="tl-bullet">ClickUp task monitoring boards</div><div class="tl-bullet">Sprint planning workflows</div><div class="tl-bullet">Bug and QA tracking</div><div class="tl-bullet">Release sign-off coordination</div><div class="tl-bullet">Developer-owned workstreams</div></div></div>
+              <div class="case-block"><div class="case-label">Complexity / Trade-Off</div><p class="case-text">Frequent blocker was stakeholder alignment, not engineering execution. Workflow had to expose ownership, priorities, and blockers earlier.</p></div>
+              <div class="case-block"><div class="case-label">What I Delivered</div><p class="case-text">Centralized delivery dashboards, clearer backlog ownership, sprint retrospectives, bug tracking, QA coordination, async updates, and release sign-off workflows.</p></div>
+              <div class="case-block"><div class="case-label">Outcome</div><p class="case-text">Reduced average feature lead time from 4 weeks to 2.5 weeks, improving delivery speed by 37.5%.</p></div>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -1523,26 +1642,27 @@ function setOsStep(idx) {
   document.querySelectorAll('.os-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
 }
 
-// -- Case study modals --
-function openModal(id) {
-  const m = document.getElementById('modal-' + id);
-  if (m) { m.classList.add('open'); document.body.style.overflow='hidden'; }
+// -- Case study accordion (single-open) --
+const caseItems = Array.from(document.querySelectorAll('.case-item'));
+function setCaseOpen(nextItem) {
+  caseItems.forEach(item => {
+    const isOpen = item === nextItem;
+    item.classList.toggle('open', isOpen);
+    const btn = item.querySelector('.case-toggle');
+    if (btn) {
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.textContent = isOpen ? 'Collapse Case Study' : 'Expand Case Study';
+    }
+  });
 }
-function closeModal(evt, id) {
-  if (evt && evt.target.closest('.modal-box')) return;
-  if (id) {
-    const m = document.getElementById('modal-' + id);
-    if (m) m.classList.remove('open');
-  } else if (evt && evt.currentTarget) {
-    evt.currentTarget.classList.remove('open');
-  }
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
-    document.body.style.overflow='';
-  }
+caseItems.forEach(item => {
+  const btn = item.querySelector('.case-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = item.classList.contains('open');
+    setCaseOpen(isOpen ? null : item);
+  });
 });
 </script>
 </body>
