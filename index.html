@@ -316,6 +316,7 @@ section{position:relative;z-index:1}
   border-radius:14px;padding:1.75rem;cursor:pointer;
   transition:all 0.3s;position:relative;overflow:hidden;
   display:flex;flex-direction:column;gap:1rem;
+  text-decoration:none;color:inherit;
 }
 .case-card::after{
   content:'View Case Study ->';
@@ -344,6 +345,11 @@ section{position:relative;z-index:1}
   border-radius:100px;color:var(--text2);
 }
 .case-card.wide{grid-column:1/-1}
+.deep-dive-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.25rem}
+.deep-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.6rem;
+}
+.deep-card.wide{grid-column:1/-1}
 
 /* BEST-FIT ROLES */
 #best-fit{background:var(--bg2)}
@@ -603,6 +609,7 @@ footer{
   .hero-right{height:380px;order:2;max-width:520px;margin:0 auto;width:100%}
   .metrics-grid{grid-template-columns:1fr 1fr}
   .cases-grid{grid-template-columns:1fr}
+  .deep-dive-grid{grid-template-columns:1fr}
   .case-card.wide{grid-column:auto}
   .os-steps{grid-template-columns:repeat(3,1fr);row-gap:1.5rem}
   .os-steps::before{display:none}
@@ -836,9 +843,9 @@ footer{
       <span class="role-pill">Growth Product Manager</span>
       <span class="role-pill">Marketplace Product Manager</span>
       <span class="role-pill">SaaS Product Manager</span>
-      <span class="role-pill">AI Product Operations</span>
+      <span class="role-pill">AI Product Ops</span>
       <span class="role-pill">Technical Project Manager</span>
-      <span class="role-pill">Agile Delivery / Scrum Product Owner</span>
+      <span class="role-pill">Scrum Product Owner</span>
     </div>
   </div>
 </section>
@@ -930,235 +937,83 @@ footer{
   <div class="section-wrap">
     <div class="section-label">Case Studies</div>
     <h2 class="section-h2">Selected Product Case Studies</h2>
-    <p class="section-sub">Real examples of product ownership across commercial systems, product ops, growth, and trust-sensitive workflows.</p>
+    <p class="section-sub">Compact highlights. Click any card to jump to the deep-dive details below.</p>
     <div class="cases-grid">
-
-      <div class="case-card" onclick="openModal('cs1')">
-        <div class="case-tags">
-          <span class="case-tag blue">Product Management</span>
-          <span class="case-tag teal">Product Ops</span>
-          <span class="case-tag violet">0-to-1 SaaS</span>
-          <span class="case-tag">Commercial Product Systems</span>
-        </div>
+      <a class="case-card" href="#deep-cs1">
+        <div class="case-tags"><span class="case-tag blue">Product Management</span><span class="case-tag teal">Product Ops</span></div>
         <h3 class="case-h3">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
-        <p class="case-desc">Built the Mintology product ecosystem from concept to launch, covering landing pages, subscription workflows, user/account management dashboards, onboarding, product positioning, documentation, QA readiness, and launch coordination.</p>
-        <div class="case-chips">
-          <span class="chip">0-to-1 SaaS</span>
-          <span class="chip">Subscription workflow</span>
-          <span class="chip">User management</span>
-          <span class="chip">Account dashboard</span>
-          <span class="chip">Onboarding</span>
-          <span class="chip">Activation</span>
-        </div>
-      </div>
-
-      <div class="case-card" onclick="openModal('cs2')">
-        <div class="case-tags">
-          <span class="case-tag blue">Marketplace Transactions</span>
-          <span class="case-tag teal">Wallet Product</span>
-          <span class="case-tag">Payment-Related UX</span>
-        </div>
+        <p class="case-desc">Built the Mintology product ecosystem from concept to launch, including subscription workflows, user/account dashboards, onboarding, documentation, QA readiness, and launch coordination.</p>
+      </a>
+      <a class="case-card" href="#deep-cs2">
+        <div class="case-tags"><span class="case-tag blue">Marketplace Transactions</span><span class="case-tag teal">Wallet Product</span></div>
         <h3 class="case-h3">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
-        <p class="case-desc">Worked on Mintable marketplace workflows involving NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller journeys, post-purchase experience, and custodial wallet requirements.</p>
-        <div class="case-chips">
-          <span class="chip">Marketplace transactions</span>
-          <span class="chip">NFT purchase flow</span>
-          <span class="chip">Bidding workflow</span>
-          <span class="chip">Payment-related UX</span>
-          <span class="chip">Custodial wallets</span>
-          <span class="chip">Buyer/seller journey</span>
-        </div>
-      </div>
-
-      <div class="case-card" onclick="openModal('cs3')">
-        <div class="case-tags">
-          <span class="case-tag blue">AI Product</span>
-          <span class="case-tag teal">Trust &amp; Safety</span>
-          <span class="case-tag">Marketplace Discovery</span>
-        </div>
+        <p class="case-desc">Owned product requirements and delivery coordination for NFT purchase, bidding, payment-related transaction states, buyer/seller journeys, and custodial wallet requirements.</p>
+      </a>
+      <a class="case-card" href="#deep-cs3">
+        <div class="case-tags"><span class="case-tag blue">AI Product</span><span class="case-tag teal">Trust &amp; Safety</span></div>
         <h3 class="case-h3">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
-        <p class="case-desc">Launched AI-powered search and AI-based DMCA photo detection for Mintable, improving marketplace discovery, creator protection, product intelligence, and trust workflows.</p>
-        <div class="case-chips">
-          <span class="chip">AI search</span>
-          <span class="chip">Content protection</span>
-          <span class="chip">PRD writing</span>
-          <span class="chip">QA sign-off</span>
-          <span class="chip">Product documentation</span>
-        </div>
-      </div>
-
-      <div class="case-card" onclick="openModal('cs4')">
-        <div class="case-tags">
-          <span class="case-tag blue">Growth Product</span>
-          <span class="case-tag teal">Experimentation</span>
-          <span class="case-tag">Product Ops</span>
-        </div>
+        <p class="case-desc">Launched AI-powered search and AI-based DMCA detection to improve marketplace discovery, creator protection, and platform trust workflows.</p>
+      </a>
+      <a class="case-card" href="#deep-cs4">
+        <div class="case-tags"><span class="case-tag blue">Growth Product</span><span class="case-tag teal">Experimentation</span></div>
         <h3 class="case-h3">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
-        <p class="case-desc">Improved Mintology adoption through onboarding improvements, CTA/messaging experiments, documentation restructuring, product education, and activation tracking after the NFT Renaissance campaign.</p>
-        <div class="case-chips">
-          <span class="chip">A/B testing</span>
-          <span class="chip">Product messaging</span>
-          <span class="chip">User education</span>
-          <span class="chip">Activation tracking</span>
-        </div>
-      </div>
-
-      <div class="case-card" onclick="openModal('cs6')">
-        <div class="case-tags">
-          <span class="case-tag blue">Agile Delivery</span>
-          <span class="case-tag">Project Management</span>
-          <span class="case-tag teal">Product Ops</span>
-        </div>
+        <p class="case-desc">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking.</p>
+      </a>
+      <a class="case-card" href="#deep-cs6">
+        <div class="case-tags"><span class="case-tag blue">Product Ops</span><span class="case-tag teal">Delivery System</span></div>
         <h3 class="case-h3">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
-        <p class="case-desc">Reduced average feature delivery time from 4 weeks to 2.5 weeks by clarifying ownership, reducing context switching, improving sprint structure, centralizing ClickUp visibility, and removing stakeholder blockers.</p>
-        <div class="case-chips">
-          <span class="chip">4 weeks -> 2.5 weeks</span>
-          <span class="chip">Developer-owned workstreams</span>
-          <span class="chip">Sprint retrospectives</span>
-          <span class="chip">Delivery optimization</span>
-        </div>
-      </div>
-
-      <div class="case-card wide" onclick="openModal('cs5')">
-        <div class="case-tags">
-          <span class="case-tag blue">Product Strategy</span>
-          <span class="case-tag violet">Web3</span>
-          <span class="case-tag">Lifecycle Management</span>
-        </div>
+        <p class="case-desc">Reduced average feature delivery from 4 weeks to 2.5 weeks through clearer ownership, sprint structure, blocker removal, and centralized visibility.</p>
+      </a>
+      <a class="case-card wide" href="#deep-cs5">
+        <div class="case-tags"><span class="case-tag blue">Product Strategy</span><span class="case-tag violet">Lifecycle Management</span></div>
         <h3 class="case-h3">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
-        <p class="case-desc">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, operating cost, maintenance burden, and business value.</p>
-        <div class="case-chips">
-          <span class="chip">Product lifecycle</span>
-          <span class="chip">Cost-value analysis</span>
-          <span class="chip">Strategic trade-off</span>
-          <span class="chip">C-suite alignment</span>
-          <span class="chip">Focus protection</span>
-        </div>
-      </div>
-
+        <p class="case-desc">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, maintenance burden, and business value.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Case Study Modals -->
-<div class="modal-overlay" id="modal-cs1" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs1')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem">
-      <span class="case-tag blue">Product Management</span><span class="case-tag teal">0-to-1 SaaS</span>
-    </div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Built the Mintology product ecosystem from concept to launch, covering landing pages, subscription workflows, user/account management dashboards, onboarding, product positioning, documentation, QA readiness, and launch coordination.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">My Role</div>
-        <div style="font-size:0.83rem;color:var(--text2)">Scrum Master cum Product Owner — owned PRDs, user stories, acceptance criteria, sprint coordination, QA alignment, release notes, product documentation, stakeholder alignment, and launch readiness.</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Key Outcome</div>
-        <div style="font-size:0.83rem;color:var(--text2)">Full product ecosystem shipped, with a 25% adoption improvement supported by campaign-led activation, onboarding improvements, product education, documentation, and activation tracking.</div>
-      </div>
-    </div>
-    <div style="margin-top:1rem;background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--teal);border-radius:10px;padding:1rem">
-      <div style="font-size:0.65rem;color:var(--teal);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Partners involved</div>
-      <div style="font-size:0.83rem;color:var(--text2)">Station Casinos, Mastercard, All That Matters</div>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cs2" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs2')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Marketplace Transactions</span><span class="case-tag teal">Custodial Wallets</span></div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Worked on Mintable marketplace workflows involving NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller journeys, post-purchase experience, and custodial wallet requirements.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">My Role</div>
-        <div style="font-size:0.83rem;color:var(--text2)">Translated marketplace, payment-related, wallet, and user experience requirements into PRDs, user stories, acceptance criteria, QA flows, product documentation, release notes, and cross-functional delivery plans.</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Deliverables</div>
-        <div style="font-size:0.83rem;color:var(--text2)">PRDs, user stories, acceptance criteria, QA test support, product documentation, release notes, and cross-functional alignment.</div>
-      </div>
-    </div>
-    <div style="margin-top:1rem;background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--teal);border-radius:10px;padding:1rem">
-      <div style="font-size:0.65rem;color:var(--teal);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Key Product Areas</div>
-      <div style="font-size:0.83rem;color:var(--text2)">NFT purchase flows, bidding workflows, payment-related marketplace UX, buyer/seller transaction states, custodial wallet requirements, post-purchase user experience, and marketplace trust and operational support.</div>
-    </div>
-    <div style="margin-top:1rem;background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--blue);border-radius:10px;padding:1rem">
-      <div style="font-size:0.65rem;color:var(--blue);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Complexity</div>
-      <div style="font-size:0.83rem;color:var(--text2)">Marketplace transactions and wallet flows are risk-sensitive because users need clarity, asset access, transaction confidence, and support visibility. I helped turn these complex flows into structured requirements and testable product logic.</div>
+<section id="deep-dives">
+  <div class="section-wrap">
+    <div class="section-label">Case Studies</div>
+    <h2 class="section-h2">Deep-Dive Case Studies</h2>
+    <p class="section-sub">Expanded details on ownership scope, complexity, execution, and outcomes.</p>
+    <div class="deep-dive-grid">
+      <article class="deep-card" id="deep-cs1">
+        <h3 class="case-h3">Mintology 0-to-1: Subscription, User Management &amp; B2B SaaS Launch System</h3>
+        <p class="case-desc">Built the Mintology product ecosystem from concept to launch, covering landing pages, subscription workflows, user/account management dashboards, onboarding, product positioning, documentation, QA readiness, and launch coordination.</p>
+        <p class="case-desc"><strong>Role:</strong> Scrum Master cum Product Owner — owned PRDs, user stories, acceptance criteria, sprint coordination, QA alignment, release notes, product documentation, stakeholder alignment, and launch readiness.</p>
+        <p class="case-desc"><strong>Outcome:</strong> Full B2B SaaS product ecosystem shipped, with adoption improved by 25% through campaign-led activation, onboarding improvements, documentation, product education, and activation tracking.</p>
+      </article>
+      <article class="deep-card" id="deep-cs2">
+        <h3 class="case-h3">Mintable Marketplace: Payment-Linked Purchase, Bidding &amp; Custodial Wallet Workflows</h3>
+        <p class="case-desc">Owned product requirements and delivery coordination for Mintable marketplace workflows involving NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller journeys, post-purchase experience, and custodial wallet requirements.</p>
+        <p class="case-desc"><strong>Role:</strong> Translated marketplace, payment-related, wallet, and user experience requirements into PRDs, user stories, acceptance criteria, QA flows, product documentation, release notes, and cross-functional delivery plans.</p>
+        <p class="case-desc"><strong>Complexity:</strong> These workflows were risk-sensitive because users needed transaction clarity, asset access, payment-state confidence, and support visibility. Translated these complex flows into structured requirements, QA-ready logic, and release documentation.</p>
+      </article>
+      <article class="deep-card" id="deep-cs3">
+        <h3 class="case-h3">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
+        <p class="case-desc">Launched AI-powered search and AI-based DMCA photo detection for Mintable, improving marketplace discovery, creator protection, product intelligence, and trust workflows.</p>
+        <p class="case-desc"><strong>Role:</strong> Owned PRD writing, QA coordination, product documentation, release notes, and launch alignment across product, engineering, QA, and operations.</p>
+      </article>
+      <article class="deep-card" id="deep-cs4">
+        <h3 class="case-h3">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
+        <p class="case-desc">Drove product-growth experiments across onboarding, CTA copy, documentation, feature education, and activation tracking, improving Mintology adoption by 25% after the NFT Renaissance campaign.</p>
+        <p class="case-desc"><strong>Experiments:</strong> Landing page messaging, onboarding CTA variants, product education copy, documentation structure, and feature explanation.</p>
+        <p class="case-desc"><strong>Result:</strong> 25% improvement in product adoption tracked through activation metrics, contract deployment, and NFT minting-related user actions.</p>
+      </article>
+      <article class="deep-card wide" id="deep-cs5">
+        <h3 class="case-h3">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
+        <p class="case-desc">Partnered with C-suite leadership to sunset ERC721Ex after evaluating market decline, operating cost, maintenance burden, and business value.</p>
+        <p class="case-desc"><strong>Why it matters:</strong> Knowing what not to build or maintain is as important as launching new products.</p>
+      </article>
+      <article class="deep-card wide" id="deep-cs6">
+        <h3 class="case-h3">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
+        <p class="case-desc">Reduced average feature delivery time from 4 weeks to 2.5 weeks by clarifying ownership, reducing context switching, improving sprint structure, centralizing ClickUp visibility, and removing stakeholder blockers.</p>
+      </article>
     </div>
   </div>
-</div>
-
-<div class="modal-overlay" id="modal-cs3" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs3')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">AI Product</span><span class="case-tag teal">Trust &amp; Safety</span></div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">AI Search &amp; DMCA Detection: Marketplace Discovery, Creator Protection &amp; Trust</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Launched AI-powered search and AI-based DMCA photo detection for Mintable, improving marketplace discovery, creator protection, product intelligence, and trust workflows.</p>
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-top:0.5rem">
-      <div style="font-size:0.65rem;color:var(--blue);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem">Role</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem">
-        <div class="tl-bullet">Owned PRD writing, QA coordination, product documentation, release notes, and launch alignment</div>
-        <div class="tl-bullet">Coordinated delivery across product, engineering, QA, and operations</div>
-        <div class="tl-bullet">Connected discovery quality with creator protection and trust workflow outcomes</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cs4" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs4')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Growth Product</span><span class="case-tag teal">Experimentation</span></div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Growth Product: Improving Activation &amp; Adoption by 25%</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Improved Mintology adoption through onboarding improvements, CTA/messaging experiments, documentation restructuring, product education, and activation tracking after the NFT Renaissance campaign.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Experiments Run</div>
-        <div style="font-size:0.83rem;color:var(--text2)">Landing page messaging, onboarding CTA variants, product education copy, documentation structure, and feature explanation.</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
-        <div style="font-size:0.65rem;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Result</div>
-        <div style="font-size:0.83rem;color:var(--text2)">25% improvement in product adoption tracked through activation metrics, contract deployment, and NFT minting-related user actions.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cs5" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs5')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Product Strategy</span><span class="case-tag violet">Web3</span></div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Product Judgment: Sunsetting ERC721Ex to Protect Focus and Resources</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">Not every product should be maintained forever. ERC721Ex had declining market relevance, rising maintenance costs, and diminishing user engagement. I worked with C-suite to evaluate the full cost-value picture and make the strategic call to sunset, freeing team resources for higher-value work.</p>
-    <div style="background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--violet);border-radius:10px;padding:1.25rem;margin-top:0.5rem">
-      <div style="font-size:0.65rem;color:var(--violet);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Why this matters</div>
-      <div style="font-size:0.85rem;color:var(--text2);line-height:1.65">Shows product judgment: knowing what not to build or maintain is as important as launching new products.</div>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cs6" onclick="closeModal(event)">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal(null,'cs6')">X</button>
-    <div class="case-tags" style="margin-bottom:1rem"><span class="case-tag blue">Agile Delivery</span><span class="case-tag teal">Product Ops</span></div>
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Product Ops: Reducing Feature Lead Time by 37.5%</h3>
-    <p style="font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.5rem">The team was delivering features in 4 weeks on average. I addressed ownership ambiguity, context switching, and handoff friction to reduce lead time to 2.5 weeks across marketplace, subscription, dashboard, and AI feature delivery.</p>
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-top:0.5rem">
-      <div style="font-size:0.65rem;color:var(--blue);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem">Key Changes Made</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem">
-        <div class="tl-bullet">Introduced developer-owned workstreams with clear ticket ownership</div>
-        <div class="tl-bullet">Formalized sprint retrospectives to capture and action blockers</div>
-        <div class="tl-bullet">Reduced stakeholder bottlenecks by async-first decision protocols</div>
-        <div class="tl-bullet">Centralized task monitoring in ClickUp for full visibility</div>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
 <div class="section-divider"></div>
 
@@ -1320,7 +1175,7 @@ footer{
           <div class="tl-bullets">
             <div class="tl-bullet">Launched AI-based DMCA photo detection and AI-powered search for Mintable, improving discovery, creator protection, and platform trust</div>
             <div class="tl-bullet">Developed the full Mintology product ecosystem, including landing pages, subscription workflows, user management dashboards, onboarding, positioning, and documentation</div>
-            <div class="tl-bullet">Worked on Mintable marketplace workflows including NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller UX, and custodial wallet requirements</div>
+            <div class="tl-bullet">Owned product requirements and delivery coordination for Mintable marketplace workflows including NFT purchase journeys, bidding flows, payment-related transaction states, buyer/seller UX, and custodial wallet requirements</div>
             <div class="tl-bullet">Built task monitoring boards and user/subscription management dashboards to improve account visibility and operational control</div>
             <div class="tl-bullet">Wrote PRDs, user stories, acceptance criteria, release notes, QA flows, and product documentation across SaaS, marketplace, AI, dashboard, and wallet-related features</div>
             <div class="tl-bullet">Facilitated Scrum ceremonies, sprint retrospectives, blocker removal, and cross-functional release coordination</div>
@@ -1636,12 +1491,14 @@ function animateCounters() {
   document.querySelectorAll('[data-target]').forEach(el => {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
+    const currentText = (el.textContent || '').replace(/[^0-9.]/g, '');
+    const startVal = currentText ? parseFloat(currentText) : target;
     const duration = 1600;
     const start = performance.now();
     function step(now) {
       const progress = Math.min((now - start) / duration, 1);
       const ease = 1 - Math.pow(1 - progress, 3);
-      const val = ease * target;
+      const val = startVal + (target - startVal) * ease;
       el.textContent = (target % 1 !== 0 ? val.toFixed(1) : Math.round(val)) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
@@ -1690,6 +1547,7 @@ document.addEventListener('keydown', e => {
 </script>
 </body>
 </html>
+
 
 
 
