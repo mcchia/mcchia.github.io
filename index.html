@@ -764,8 +764,56 @@ footer{
   footer{padding:1.25rem 1rem;font-size:0.7rem}
 }
 
-/* CAREER JOURNEY */
+/* CAREER JOURNEY — compact */
 #journey{background:var(--bg2)}
+.cj-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:0;margin-top:2.5rem;position:relative;
+}
+.cj-connector{
+  position:absolute;top:28px;left:calc(100%/10);right:calc(100%/10);
+  height:1px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--violet));
+  opacity:0.35;pointer-events:none;
+}
+.cj-card{
+  display:flex;flex-direction:column;gap:0.65rem;
+  padding:0 0.75rem 0 0;position:relative;z-index:1;
+}
+.cj-card:last-child{padding-right:0}
+.cj-num{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg);border:1px solid var(--border2);
+  font-family:var(--mono);font-size:0.68rem;font-weight:600;color:var(--text2);
+  flex-shrink:0;transition:all 0.3s;
+}
+.cj-card:hover .cj-num{border-color:var(--blue);color:var(--blue);box-shadow:0 0 16px rgba(79,142,247,0.25)}
+.cj-content{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:0.85rem 0.9rem;
+  transition:border-color 0.3s,background 0.3s;
+  flex:1;
+}
+.cj-card:hover .cj-content{border-color:var(--border2);background:var(--surface2)}
+.cj-role{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:700;
+  letter-spacing:-0.01em;margin-bottom:0.45rem;line-height:1.25;
+}
+.cj-learned{font-size:0.76rem;color:var(--text2);line-height:1.55;margin-bottom:0.55rem}
+.cj-cap{
+  display:inline-block;font-size:0.64rem;font-weight:600;font-family:var(--mono);
+  color:var(--teal);border:1px solid rgba(34,211,200,0.3);
+  background:rgba(34,211,200,0.07);border-radius:4px;
+  padding:0.18rem 0.45rem;line-height:1.4;
+}
+@media(max-width:1024px){
+  .cj-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .cj-connector{display:none}
+  .cj-card{padding:0}
+}
+@media(max-width:480px){
+  .cj-grid{grid-template-columns:1fr}
+}
 .journey-track{
   margin-top:3rem;
   display:flex;flex-direction:column;gap:0;
@@ -843,6 +891,7 @@ footer{
   </button>
   <div class="nav-links" id="nav-links">
     <a href="#hero" class="active">Home</a>
+    <a href="#journey">Career</a>
     <a href="#cases">Case Studies</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -934,6 +983,66 @@ footer{
         <div class="artifact a8"><span class="art-tag" style="color:var(--blue)">[STAKEHOLDER]</span><span class="art-label">Alignment</span><span class="art-sub">C-suite sign-off</span></div>
         <div class="artifact a9"><span class="art-tag" style="color:var(--violet)">[DOCS]</span><span class="art-label">V2 Knowledge Base</span><span class="art-sub">Updated</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CAREER JOURNEY — compact -->
+<section id="journey">
+  <div class="section-wrap">
+    <div class="section-label">Career Journey</div>
+    <h2 class="section-h2">Five roles. One through-line.</h2>
+    <p class="section-sub">Each role added a layer — from understanding people, to delivering products, to running operations at scale.</p>
+    <div class="cj-grid">
+      <div class="cj-connector"></div>
+
+      <div class="cj-card">
+        <div class="cj-num">01</div>
+        <div class="cj-content">
+          <div class="cj-role">Community Manager</div>
+          <p class="cj-learned">Learned to listen at scale — processing hundreds of user signals and identifying what actually matters.</p>
+          <span class="cj-cap">Customer communication & escalation</span>
+        </div>
+      </div>
+
+      <div class="cj-card">
+        <div class="cj-num">02</div>
+        <div class="cj-content">
+          <div class="cj-role">User Growth Specialist</div>
+          <p class="cj-learned">Learned to move users from sign-up to activation intentionally — through structured experiments, not guesswork.</p>
+          <span class="cj-cap">Onboarding design & A/B testing</span>
+        </div>
+      </div>
+
+      <div class="cj-card">
+        <div class="cj-num">03</div>
+        <div class="cj-content">
+          <div class="cj-role">QA Tester</div>
+          <p class="cj-learned">Learned how software breaks and how to communicate it clearly across engineering and business teams.</p>
+          <span class="cj-cap">Acceptance criteria & technical communication</span>
+        </div>
+      </div>
+
+      <div class="cj-card">
+        <div class="cj-num">04</div>
+        <div class="cj-content">
+          <div class="cj-role">Product Owner</div>
+          <p class="cj-learned">Learned to translate business goals into structured requirements and ship products end-to-end.</p>
+          <span class="cj-cap">PRDs, sprints & stakeholder alignment</span>
+        </div>
+      </div>
+
+      <div class="cj-card">
+        <div class="cj-num">05</div>
+        <div class="cj-content">
+          <div class="cj-role">Operations & Logistics Manager</div>
+          <p class="cj-learned">Learned to keep complex, multi-stakeholder operations running on time and within scope under pressure.</p>
+          <span class="cj-cap">End-to-end delivery & vendor coordination</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
