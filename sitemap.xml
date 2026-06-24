@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+
+  <!--
+    Primary URL — the canonical entry point Google indexes.
+    All section anchors below are supplementary; Google does not
+    follow fragment identifiers (#) but ATS crawlers and AI tools do.
+    priority 1.0 = highest signal to crawlers.
+  -->
   <url>
     <loc>https://mcchia.github.io/MC-Portfolio/</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-SG"
+      href="https://mcchia.github.io/MC-Portfolio/"
+    />
+    <image:image>
+      <image:loc>https://mcchia.github.io/MC-Portfolio/og-image.png</image:loc>
+      <image:title>Ming Cat Chia — Program Manager &amp; Product Operations | Singapore</image:title>
+      <image:caption>Portfolio of Ming Cat Chia, Program Manager and Product Operations specialist based in Singapore.</image:caption>
+    </image:image>
   </url>
+
+  <!-- Home -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/#hero</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/#about</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experience -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/#experience</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects / Case Studies -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/#cases</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Resume (PDF) -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/project/uploads/Chia_Ming_Cat_2026.pdf</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://mcchia.github.io/MC-Portfolio/#contact</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
