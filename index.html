@@ -386,6 +386,7 @@ nav{
   font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;
   color:var(--text);letter-spacing:-0.02em;
   display:flex;align-items:center;gap:0.5rem;
+  text-decoration:none;
 }
 .nav-logo span{color:var(--blue)}
 .nav-links{display:flex;align-items:center;gap:2rem}
@@ -1028,9 +1029,10 @@ footer{
     flex-direction:column;align-items:stretch;gap:0;
     background:rgba(7,12,26,0.97);backdrop-filter:blur(20px);
     border-bottom:1px solid var(--border);
-    padding:0.5rem 1.25rem 1rem;
+    padding:0.5rem 1.25rem 1.25rem;
     transform:translateY(calc(-100% - 60px));transition:transform 0.3s ease;
-    pointer-events:none;
+    pointer-events:none;z-index:99;
+    max-height:calc(100vh - 60px);overflow-y:auto;
   }
   .nav-links.open{transform:translateY(0);pointer-events:all}
   .nav-links a{
@@ -1240,7 +1242,7 @@ footer{
 
 <!-- NAV -->
 <nav id="main-nav" aria-label="Primary navigation">
-  <div class="nav-logo">MC<span>.</span>Chia</div>
+  <a href="#hero" class="nav-logo">MC<span>.</span>Chia</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <span class="nav-toggle-bar"></span>
     <span class="nav-toggle-bar"></span>
