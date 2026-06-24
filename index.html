@@ -763,6 +763,72 @@ footer{
   }
   footer{padding:1.25rem 1rem;font-size:0.7rem}
 }
+
+/* CAREER JOURNEY */
+#journey{background:var(--bg2)}
+.journey-track{
+  margin-top:3rem;
+  display:flex;flex-direction:column;gap:0;
+  position:relative;
+}
+.journey-track::before{
+  content:'';position:absolute;left:28px;top:28px;bottom:28px;width:1px;
+  background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 50%,var(--violet) 100%);
+}
+.journey-step{
+  display:grid;grid-template-columns:56px 1fr;gap:0 1.75rem;
+  align-items:start;padding-bottom:2.5rem;position:relative;
+}
+.journey-step:last-child{padding-bottom:0}
+.journey-node{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border2);background:var(--bg);
+  font-family:var(--mono);font-size:0.65rem;font-weight:600;color:var(--text2);
+  position:relative;z-index:1;
+  transition:all 0.3s;
+}
+.journey-step:hover .journey-node{border-color:var(--blue);color:var(--blue);box-shadow:0 0 16px rgba(79,142,247,0.3)}
+.journey-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem 1.6rem;
+  transition:border-color 0.3s,background 0.3s;
+}
+.journey-step:hover .journey-card{border-color:var(--border2);background:var(--surface2)}
+.journey-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.9rem;flex-wrap:wrap}
+.journey-title{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;
+  letter-spacing:-0.01em;
+}
+.journey-stage{
+  font-family:var(--mono);font-size:0.65rem;font-weight:500;
+  color:var(--blue);border:1px solid rgba(79,142,247,0.3);
+  background:rgba(79,142,247,0.07);
+  padding:0.2rem 0.55rem;border-radius:4px;white-space:nowrap;
+}
+.journey-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem}
+.journey-block{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;padding:0.75rem 0.9rem;
+}
+.journey-block-label{
+  font-size:0.62rem;color:var(--text3);font-family:var(--mono);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;
+}
+.journey-block-text{font-size:0.78rem;color:var(--text2);line-height:1.55}
+.journey-arrow{
+  display:flex;align-items:center;gap:0.5rem;
+  margin:0.5rem 0 0.5rem 3.25rem;
+  font-family:var(--mono);font-size:0.65rem;color:var(--text3);
+}
+.journey-arrow::before{content:'';width:1px;height:20px;background:var(--border2)}
+@media(max-width:768px){
+  .journey-body{grid-template-columns:1fr}
+  .journey-track::before{left:22px}
+  .journey-node{width:44px;height:44px;font-size:0.6rem}
+  .journey-step{grid-template-columns:44px 1fr;gap:0 1.25rem}
+  .journey-arrow{margin-left:2.5rem}
+}
 </style>
 </head>
 <body>
@@ -777,6 +843,7 @@ footer{
   </button>
   <div class="nav-links" id="nav-links">
     <a href="#hero" class="active">Home</a>
+    <a href="#journey">Career Journey</a>
     <a href="#cases">Case Studies</a>
     <a href="#product-os">How I Work</a>
     <a href="#experience">Experience</a>
@@ -900,6 +967,154 @@ footer{
       <span class="role-pill">Implementation Specialist</span>
       <span class="role-pill">Operations Analyst</span>
       <span class="role-pill">Operations Coordinator</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CAREER JOURNEY -->
+<section id="journey">
+  <div class="section-wrap">
+    <div class="section-label">Career Journey</div>
+    <h2 class="section-h2">Five roles. One through-line.</h2>
+    <p class="section-sub">Every step built on the last — from understanding people, to delivering products, to running operations at scale.</p>
+
+    <div class="journey-track">
+
+      <!-- Stage 1 -->
+      <div class="journey-step">
+        <div class="journey-node">01</div>
+        <div class="journey-card">
+          <div class="journey-header">
+            <div class="journey-title">Community Manager</div>
+            <span class="journey-stage">Stage 1 — Customer Empathy</span>
+          </div>
+          <div class="journey-body">
+            <div class="journey-block">
+              <div class="journey-block-label">What I learned</div>
+              <p class="journey-block-text">How to listen to people at scale. Managing communities means processing hundreds of signals — questions, complaints, confusion, enthusiasm — and identifying what actually matters.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">Skills developed</div>
+              <p class="journey-block-text">Customer communication, escalation handling, stakeholder trust-building, crisis response, onboarding content creation, SOP design, moderator training.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">How it prepared me</div>
+              <p class="journey-block-text">Taught me that before you can grow anything, you have to understand what users actually need — the foundation of every role that followed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-arrow">↓ Customer insight led to growth responsibility</div>
+
+      <!-- Stage 2 -->
+      <div class="journey-step">
+        <div class="journey-node">02</div>
+        <div class="journey-card">
+          <div class="journey-header">
+            <div class="journey-title">User Growth Specialist</div>
+            <span class="journey-stage">Stage 2 — Problem Solving</span>
+          </div>
+          <div class="journey-body">
+            <div class="journey-block">
+              <div class="journey-block-label">What I learned</div>
+              <p class="journey-block-text">Why users stay, activate, and refer others — and how to move those numbers intentionally through messaging, onboarding design, and feedback loops rather than guesswork.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">Skills developed</div>
+              <p class="journey-block-text">Activation tracking, A/B testing, onboarding optimisation, user interview synthesis, campaign coordination, documentation structure, data-informed decision-making.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">How it prepared me</div>
+              <p class="journey-block-text">Shifted my thinking from reactive (respond to users) to proactive (design for user outcomes) — the mindset shift that makes a product owner effective.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-arrow">↓ Understanding users led to evaluating what was being built for them</div>
+
+      <!-- Stage 3 -->
+      <div class="journey-step">
+        <div class="journey-node">03</div>
+        <div class="journey-card">
+          <div class="journey-header">
+            <div class="journey-title">QA Tester</div>
+            <span class="journey-stage">Stage 3 — Technical Communication</span>
+          </div>
+          <div class="journey-body">
+            <div class="journey-block">
+              <div class="journey-block-label">What I learned</div>
+              <p class="journey-block-text">How software actually breaks — and how to communicate that clearly to engineers, stakeholders, and customers. QA is where you develop a rigorous, evidence-based way of thinking.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">Skills developed</div>
+              <p class="journey-block-text">Test case design, acceptance criteria validation, bug documentation, cross-functional communication between product and engineering, release readiness assessment.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">How it prepared me</div>
+              <p class="journey-block-text">Made me the person who could translate between technical and non-technical stakeholders — a critical skill for product ownership, program management, and customer-facing roles alike.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-arrow">↓ Knowing how to test things made it natural to own what gets built</div>
+
+      <!-- Stage 4 -->
+      <div class="journey-step">
+        <div class="journey-node">04</div>
+        <div class="journey-card">
+          <div class="journey-header">
+            <div class="journey-title">Product Owner</div>
+            <span class="journey-stage">Stage 4 — Product Delivery</span>
+          </div>
+          <div class="journey-body">
+            <div class="journey-block">
+              <div class="journey-block-label">What I learned</div>
+              <p class="journey-block-text">How to translate business goals and customer needs into structured requirements, coordinate delivery across teams, manage competing priorities, and get things shipped on time.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">Skills developed</div>
+              <p class="journey-block-text">PRD writing, sprint coordination, stakeholder alignment, backlog prioritisation, release documentation, cross-functional delivery, blocker removal, roadmap decision-making.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">How it prepared me</div>
+              <p class="journey-block-text">Running delivery end-to-end — from requirements through launch — gave me an operational view of how organisations actually execute. That view scales beyond product into any delivery or operations role.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-arrow">↓ End-to-end delivery ownership expanded into operational leadership</div>
+
+      <!-- Stage 5 -->
+      <div class="journey-step">
+        <div class="journey-node">05</div>
+        <div class="journey-card">
+          <div class="journey-header">
+            <div class="journey-title">Operations &amp; Logistics Manager</div>
+            <span class="journey-stage">Stage 5 — Operational Thinking</span>
+          </div>
+          <div class="journey-body">
+            <div class="journey-block">
+              <div class="journey-block-label">What I learned</div>
+              <p class="journey-block-text">How to keep complex, multi-stakeholder operations running on time and within scope — vendor coordination, resource scheduling, timeline management, and day-of execution under pressure.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">Skills developed</div>
+              <p class="journey-block-text">End-to-end logistics planning, vendor and supplier coordination, volunteer and team scheduling, process documentation, risk contingency planning, multi-workstream execution.</p>
+            </div>
+            <div class="journey-block">
+              <div class="journey-block-label">What it unlocked</div>
+              <p class="journey-block-text">The confidence to own outcomes — not just tasks. Whether in product, operations, or customer-facing roles, I now bring the full picture: customer empathy, structured delivery, and operational discipline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
