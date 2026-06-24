@@ -387,12 +387,38 @@ section[id], .case-study-anchor{scroll-margin-top:110px}
 
 /* BEST-FIT ROLES */
 #best-fit{background:var(--bg2)}
-.roles-pills{display:flex;flex-wrap:wrap;gap:0.55rem;margin-top:1.8rem}
+.roles-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.9rem}
 .role-pill{
-  font-size:0.72rem;font-weight:600;font-family:var(--mono);letter-spacing:0.01em;
-  color:var(--text);padding:0.45rem 0.75rem;border-radius:999px;
+  font-size:0.7rem;font-weight:600;font-family:var(--mono);letter-spacing:0.01em;
+  color:var(--text);padding:0.35rem 0.7rem;border-radius:999px;
   border:1px solid var(--border2);background:var(--surface);
 }
+.bf-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.bf-group{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.25rem 1.4rem;
+  display:flex;flex-direction:column;gap:0;
+  transition:border-color 0.3s,background 0.3s;
+}
+.bf-group:hover{background:var(--surface2)}
+.bf-group-label{
+  font-size:0.62rem;font-weight:600;font-family:var(--mono);
+  text-transform:uppercase;letter-spacing:0.1em;
+  margin-bottom:0.4rem;
+}
+.bf-g-blue .bf-group-label{color:var(--blue)}
+.bf-g-blue{border-left:2px solid var(--blue)}
+.bf-g-teal .bf-group-label{color:var(--teal)}
+.bf-g-teal{border-left:2px solid var(--teal)}
+.bf-g-violet .bf-group-label{color:var(--violet)}
+.bf-g-violet{border-left:2px solid var(--violet)}
+.bf-group-title{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:0.92rem;font-weight:700;
+  letter-spacing:-0.01em;margin-bottom:0.5rem;
+}
+.bf-group-desc{font-size:0.79rem;color:var(--text2);line-height:1.6;margin-bottom:0.85rem}
+@media(max-width:1024px){.bf-groups{grid-template-columns:1fr}}
+@media(max-width:480px){.bf-groups{gap:0.75rem}}
 
 /* COMMERCIAL SYSTEMS */
 #commercial-systems{background:var(--bg)}
@@ -1040,6 +1066,55 @@ footer{
           <div class="cj-role">Operations & Logistics Manager</div>
           <p class="cj-learned">Learned to keep complex, multi-stakeholder operations running on time and within scope under pressure.</p>
           <span class="cj-cap">End-to-end delivery & vendor coordination</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BEST-FIT ROLES -->
+<section id="best-fit">
+  <div class="section-wrap">
+    <div class="section-label">Best-Fit Roles</div>
+    <h2 class="section-h2">Where I add value immediately.</h2>
+    <div class="bf-groups">
+
+      <div class="bf-group bf-g-blue">
+        <div class="bf-group-label">Product &amp; Delivery</div>
+        <div class="bf-group-title">Product Management</div>
+        <p class="bf-group-desc">Owned delivery end-to-end across two live products — requirements, stakeholder alignment, QA coordination, and launch — with direct accountability for customer outcomes.</p>
+        <div class="roles-pills">
+          <span class="role-pill">Product Manager</span>
+          <span class="role-pill">Product Owner</span>
+          <span class="role-pill">Program Manager</span>
+          <span class="role-pill">Product Operations Manager</span>
+        </div>
+      </div>
+
+      <div class="bf-group bf-g-teal">
+        <div class="bf-group-label">Customer &amp; Partner Success</div>
+        <div class="bf-group-title">Client-Facing Roles</div>
+        <p class="bf-group-desc">Managed enterprise partner relationships including Mastercard and Station Casinos — translating technical products into customer outcomes through onboarding, documentation, and delivery coordination.</p>
+        <div class="roles-pills">
+          <span class="role-pill">Account Manager</span>
+          <span class="role-pill">Solutions Consultant</span>
+          <span class="role-pill">Customer Success Manager</span>
+          <span class="role-pill">Customer Engineer</span>
+        </div>
+      </div>
+
+      <div class="bf-group bf-g-violet">
+        <div class="bf-group-label">Business &amp; Operations</div>
+        <div class="bf-group-title">Operational Leadership</div>
+        <p class="bf-group-desc">Designed and ran structured operations — from process documentation and cross-team coordination to large-scale logistics and vendor management — with measurable throughput improvements.</p>
+        <div class="roles-pills">
+          <span class="role-pill">Business Operations Manager</span>
+          <span class="role-pill">Operations Analyst</span>
+          <span class="role-pill">Fulfillment Operations</span>
+          <span class="role-pill">Apple Operations</span>
         </div>
       </div>
 
