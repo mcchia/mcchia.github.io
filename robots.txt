@@ -1,0 +1,80 @@
+# ============================================================
+# robots.txt — Ming Cat Chia Portfolio
+# https://mcchia.github.io/MC-Portfolio/
+# Last updated: 2026-06-24
+# ============================================================
+
+
+# ── DEFAULT: all crawlers ───────────────────────────────────
+# Allow everything. This is a public portfolio — the goal is
+# maximum discoverability across search engines, ATS platforms,
+# and AI tools.
+
+User-agent: *
+Allow: /
+
+
+# ── GOOGLE ─────────────────────────────────────────────────
+# Googlebot-Image: allow OG image to appear in Google Images
+# and as a thumbnail in Knowledge Panel / rich results.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /og-image.png
+
+
+# ── BING / MICROSOFT ───────────────────────────────────────
+
+User-agent: Bingbot
+Allow: /
+
+
+# ── AI CRAWLERS ────────────────────────────────────────────
+# These bots feed ChatGPT, Gemini, Claude, Copilot, and
+# Perplexity. Explicitly allowing them means your portfolio
+# content and JSON-LD structured data can surface when
+# recruiters ask AI tools: "Find me a Program Manager in
+# Singapore with Trust & Safety experience."
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+
+# ── LINKEDIN ───────────────────────────────────────────────
+# LinkedIn crawls portfolio URLs attached to profiles.
+# Allowing it improves how your portfolio preview renders
+# when recruiters view your LinkedIn profile.
+
+User-agent: LinkedInBot
+Allow: /
+
+
+# ── SITEMAP ────────────────────────────────────────────────
+
+Sitemap: https://mcchia.github.io/MC-Portfolio/sitemap.xml
