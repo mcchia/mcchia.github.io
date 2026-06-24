@@ -1,6 +1,6 @@
 # ============================================================
 # robots.txt — Ming Cat Chia Portfolio
-# https://mcchia.github.io/MC-Portfolio/
+# https://mcchia.github.io/
 # Last updated: 2026-06-24
 # ============================================================
 
@@ -77,4 +77,4 @@ Allow: /
 
 # ── SITEMAP ────────────────────────────────────────────────
 
-Sitemap: https://mcchia.github.io/MC-Portfolio/sitemap.xml
+Sitemap: https://mcchia.github.io/sitemap.xml
