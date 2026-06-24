@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mcchia.github.io/MC-Portfolio/sitemap.xml
