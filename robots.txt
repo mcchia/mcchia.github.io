@@ -36,7 +36,7 @@ Allow: /
 # Perplexity. Explicitly allowing them means your portfolio
 # content and JSON-LD structured data can surface when
 # recruiters ask AI tools: "Find me a Business & Technology
-# Strategy Analyst in Singapore with risk intelligence experience."
+# Transformation Analyst in Singapore with risk advisory experience."
 
 User-agent: GPTBot
 Allow: /

@@ -23,8 +23,8 @@
     />
     <image:image>
       <image:loc>https://mcchia.github.io/og-image.png</image:loc>
-      <image:title>Ming Cat Chia — Business &amp; Technology Strategy Analyst | Singapore</image:title>
-      <image:caption>Portfolio of Ming Cat Chia, Business &amp; Technology Strategy Analyst based in Singapore.</image:caption>
+      <image:title>Ming Cat Chia — Business &amp; Technology Transformation Analyst | Singapore</image:title>
+      <image:caption>Portfolio of Ming Cat Chia, Business &amp; Technology Transformation Analyst based in Singapore.</image:caption>
     </image:image>
   </url>
 
@@ -44,6 +44,22 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- What I Help With -->
+  <url>
+    <loc>https://mcchia.github.io/#help-with</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://mcchia.github.io/#case-studies</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Experience -->
   <url>
     <loc>https://mcchia.github.io/#experience</loc>
@@ -52,20 +68,12 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Focus Areas -->
+  <!-- Research & Advisory Notes -->
   <url>
-    <loc>https://mcchia.github.io/#focus-areas</loc>
+    <loc>https://mcchia.github.io/#notes</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Strategy Notes -->
-  <url>
-    <loc>https://mcchia.github.io/#strategy-notes</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Resume (PDF) -->
