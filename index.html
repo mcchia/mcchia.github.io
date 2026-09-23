@@ -376,7 +376,8 @@ section[id], .case-study-anchor{scroll-margin-top:90px}
   color:var(--teal);letter-spacing:-0.005em;line-height:1.4;text-wrap:balance;
   margin-bottom:-0.7rem;
 }
-.hero-domain span{color:var(--text3);margin:0 0.2rem}
+.hero-domain span{white-space:nowrap}
+.hero-domain i{font-style:normal;color:var(--text3);margin:0 0.4rem}
 .hero-h1{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:700;
@@ -682,6 +683,9 @@ section[id], .case-study-anchor{scroll-margin-top:90px}
 .edu-item .small-label{display:block;margin-bottom:0.35rem}
 .edu-title{font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4}
 .edu-meta{font-size:0.74rem;color:var(--text2);margin-top:0.2rem}
+.edu-link{color:var(--blue);text-decoration:none;white-space:nowrap}
+.edu-link:hover{text-decoration:underline}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* TECHNICAL FLUENCY */
 #fluency{background:var(--bg)}
@@ -847,7 +851,7 @@ footer{
   .hero-name{font-size:2.2rem}
   .hero-h1{font-size:1.3rem}
   .hero-domain{font-size:0.86rem}
-  .hero-domain span{margin:0 0.1rem}
+  .hero-domain i{margin:0 0.3rem}
   .hero-lead{font-size:0.98rem;line-height:1.65}
   .hero-sub{font-size:0.88rem;line-height:1.65}
   .hero-tags{gap:0.3rem}
@@ -913,7 +917,7 @@ footer{
     <div class="hero-left">
       <div class="hero-badge">Open to new opportunities · Singapore</div>
       <h1 class="hero-name"><span class="hero-name-accent">Ming Cat Chia</span></h1>
-      <p class="hero-domain">Customer Experience <span aria-hidden="true">·</span> Operations <span aria-hidden="true">·</span> Product <span aria-hidden="true">·</span> Technology</p>
+      <p class="hero-domain"><span>Customer Experience<i aria-hidden="true">·</i></span> <span>Operations<i aria-hidden="true">·</i></span> <span>Product<i aria-hidden="true">·</i></span> <span>Technology</span></p>
       <p class="hero-h1">Business &amp; Technology <em>Transformation Analyst</em></p>
       <p class="hero-lead">I work at the intersection of customer experience, business operations, product, and technology — turning ambiguous customer and operational problems into requirements, workflows, and improvements that teams can execute and measure.</p>
       <p class="hero-sub">My experience spans AI-enabled products, fintech and payment workflows, customer support and escalations, platform operations, product delivery, and high-volume risk investigations — based in Singapore, with a Southeast Asia lens.</p>
@@ -1197,14 +1201,14 @@ footer{
               <div class="tl-role">Product Owner / Scrum Master</div>
               <div class="tl-prev">Previously: User Growth Specialist · Community Manager cum QA · Community Manager</div>
             </div>
-            <div class="tl-dates">Mar 2022 – Jun 2026</div>
+            <div class="tl-dates">Mar 2022 – Jul 2026</div>
           </div>
           <p class="tl-desc">Started close to customers — community management, support, and QA — and moved into user growth and then product ownership across three concurrent products, covering marketplace, AI-enabled, payment, wallet, and subscription work. The through-line: taking what customers and operations teams were running into and turning it into changes the product and engineering teams could ship.</p>
           <div class="tl-groups">
             <div class="tl-group">
               <span class="small-label">Customer &amp; user experience</span>
               <div class="tl-bullets">
-                <div class="tl-bullet">Handled B2B and B2C customer support through Zendesk, including payment, subscription, and platform escalations, and coordinated resolution with product, engineering, and operations</div>
+                <div class="tl-bullet">Handled B2B and B2C customer operations across onboarding sessions, video consultations, email, and Zendesk, and resolved payment, wallet, subscription, and account escalations with product, engineering, QA, and operations</div>
                 <div class="tl-bullet">Identified recurring customer issues and pain points across tickets and community feedback, and turned them into product fixes, workflow changes, and help-centre / FAQ content</div>
                 <div class="tl-bullet">Managed the user community and used its feedback to shape onboarding and user education</div>
               </div>
@@ -1318,7 +1322,7 @@ footer{
       <div class="edu-item">
         <span class="small-label">Certification</span>
         <div class="edu-title">Professional Scrum Product Owner I</div>
-        <div class="edu-meta">Scrum.org · 2025</div>
+        <div class="edu-meta">Scrum.org · Oct 2025 · <a href="https://www.credly.com/badges/c8712244-c188-45f2-823c-64c4f0594481" target="_blank" rel="noopener noreferrer" class="edu-link">Verify on Credly<span class="visually-hidden"> (opens in a new tab)</span></a></div>
       </div>
       <div class="edu-item">
         <span class="small-label">Languages</span>
@@ -1392,9 +1396,9 @@ footer{
     </div>
     <div class="tools-row">
       <span class="small-label">Tools</span>
-      <span class="tool-tag">Zendesk</span><span class="tool-tag">ClickUp</span><span class="tool-tag">Qase</span>
+      <span class="tool-tag">Zendesk</span><span class="tool-tag">JIRA</span><span class="tool-tag">ClickUp</span><span class="tool-tag">Qase</span>
       <span class="tool-tag">Miro</span><span class="tool-tag">Figma</span>
-      <span class="tool-tag">Google Analytics</span><span class="tool-tag">Looker Studio</span>
+      <span class="tool-tag">Google Analytics</span><span class="tool-tag">Looker Studio</span><span class="tool-tag">Excel</span>
     </div>
   </div>
 </section>
