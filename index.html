@@ -507,19 +507,20 @@ section[id], .case-study-anchor{scroll-margin-top:90px}
 }
 .outcome{
   background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  padding:1.25rem 1.1rem;display:flex;flex-direction:column;gap:0.35rem;
+  padding:1.25rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:0.3rem;
 }
 .outcome-val{
-  font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;
-  letter-spacing:-0.03em;line-height:1.1;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:2.25rem;font-weight:800;
+  letter-spacing:-0.035em;line-height:1.05;margin-bottom:0.2rem;
   background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .outcome-label{font-size:0.86rem;font-weight:600;color:var(--text);line-height:1.35}
-.outcome-context{font-size:0.76rem;color:var(--text2);line-height:1.5}
+.outcome-context{font-size:0.74rem;color:var(--text2);line-height:1.45}
+.outcomes-sub{max-width:560px}
 .outcome-source{
-  margin-top:auto;padding-top:0.6rem;
-  font-family:var(--mono);font-size:0.62rem;color:var(--text3);letter-spacing:0.04em;
+  margin-top:auto;padding-top:0.75rem;
+  font-family:var(--mono);font-size:0.6rem;color:var(--text3);letter-spacing:0.04em;
 }
 
 /* WHAT I DO */
@@ -863,7 +864,7 @@ footer{
   }
   .hero-ctas .btn-link{width:100%;justify-content:flex-start;margin-top:0.25rem}
   .outcome{padding:1rem 0.9rem}
-  .outcome-val{font-size:1.6rem}
+  .outcome-val{font-size:1.75rem}
   .case-h3{font-size:1.03rem}
   .case-tags{gap:0.28rem}
   .case-tag{font-size:0.62rem}
@@ -987,37 +988,37 @@ footer{
 <section id="outcomes" aria-labelledby="outcomes-h">
   <div class="section-wrap">
     <div class="section-label">Selected Outcomes</div>
-    <h2 class="section-h2" id="outcomes-h">Results tied to specific changes.</h2>
-    <p class="section-sub">Each figure comes from a change in how work was done — a redesigned workflow, a clearer onboarding path, or a controlled review process.</p>
+    <h2 class="section-h2" id="outcomes-h">What changed.</h2>
+    <p class="section-sub outcomes-sub">A snapshot of measurable improvements across product delivery, adoption, team operations, and risk review.</p>
     <div class="outcomes-grid">
       <div class="outcome">
         <div class="outcome-val">37.5%</div>
         <div class="outcome-label">Shorter feature lead time</div>
-        <div class="outcome-context">4 weeks → 2.5 weeks after redesigning the delivery workflow</div>
+        <div class="outcome-context">4 weeks → 2.5 weeks</div>
         <div class="outcome-source">Mintable &amp; Mintology</div>
       </div>
       <div class="outcome">
         <div class="outcome-val">+20%</div>
         <div class="outcome-label">Team throughput</div>
-        <div class="outcome-context">Clearer ownership, prioritisation, and dependency tracking</div>
+        <div class="outcome-context">After workflow and prioritisation changes</div>
         <div class="outcome-source">Mintable &amp; Mintology</div>
       </div>
       <div class="outcome">
         <div class="outcome-val">+25%</div>
         <div class="outcome-label">Feature adoption</div>
-        <div class="outcome-context">Onboarding changes, user education, and feedback analysis</div>
+        <div class="outcome-context">Through onboarding and feedback improvements</div>
         <div class="outcome-source">Mintable &amp; Mintology</div>
       </div>
       <div class="outcome">
         <div class="outcome-val">−30%</div>
         <div class="outcome-label">Meeting overhead</div>
-        <div class="outcome-context">Recurring status meetings moved to async reporting</div>
+        <div class="outcome-context">By shifting recurring updates async</div>
         <div class="outcome-source">Mintable &amp; Mintology</div>
       </div>
       <div class="outcome">
         <div class="outcome-val">95%</div>
         <div class="outcome-label">QA accuracy in risk review</div>
-        <div class="outcome-context">Around 700 fraud and scam cases a day, against defined criteria</div>
+        <div class="outcome-context">Across ~700 daily fraud/scam cases</div>
         <div class="outcome-source">Accenture</div>
       </div>
     </div>
