@@ -1,7 +1,7 @@
 # ============================================================
 # robots.txt — Ming Cat Chia Portfolio
 # https://mcchia.github.io/
-# Last updated: 2026-07-01
+# Last updated: 2026-09-23
 # ============================================================
 
 
@@ -34,9 +34,8 @@ Allow: /
 # ── AI CRAWLERS ────────────────────────────────────────────
 # These bots feed ChatGPT, Gemini, Claude, Copilot, and
 # Perplexity. Explicitly allowing them means your portfolio
-# content and JSON-LD structured data can surface when
-# recruiters ask AI tools: "Find me a Business & Technology
-# Transformation Analyst in Singapore with risk advisory experience."
+# content and JSON-LD structured data can surface in
+# AI search answers.
 
 User-agent: GPTBot
 Allow: /
