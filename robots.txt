@@ -6,9 +6,7 @@
 
 
 # ── DEFAULT: all crawlers ───────────────────────────────────
-# Allow everything. This is a public portfolio — the goal is
-# maximum discoverability across search engines, ATS platforms,
-# and AI tools.
+# Allow everything. This is a public portfolio.
 
 User-agent: *
 Allow: /
@@ -32,10 +30,8 @@ Allow: /
 
 
 # ── AI CRAWLERS ────────────────────────────────────────────
-# These bots feed ChatGPT, Gemini, Claude, Copilot, and
-# Perplexity. Explicitly allowing them means your portfolio
-# content and JSON-LD structured data can surface in
-# AI search answers.
+# Explicitly allowed so page content and structured data
+# can appear in AI search answers.
 
 User-agent: GPTBot
 Allow: /
@@ -66,9 +62,7 @@ Allow: /
 
 
 # ── LINKEDIN ───────────────────────────────────────────────
-# LinkedIn crawls portfolio URLs attached to profiles.
-# Allowing it improves how your portfolio preview renders
-# when recruiters view your LinkedIn profile.
+# Allows LinkedIn to render link previews of the site.
 
 User-agent: LinkedInBot
 Allow: /

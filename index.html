@@ -23,19 +23,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      KEYWORDS
      ═══════════════════════════════════════════════════════════════ -->
-<meta name="keywords" content="
-  Ming Cat Chia,
-  Business and Technology Transformation, Customer Experience,
-  CX Transformation, Business Transformation, Technology Transformation,
-  Product Operations, Business Analyst, Solutions Strategy,
-  Technology Consulting, Partner Experience,
-  Workflow Improvement, Process Improvement, Requirements, User Stories,
-  Acceptance Criteria, UAT, QA, Stakeholder Coordination, Implementation,
-  Customer Pain Points, Escalation Analysis, Incident Analysis, Adoption,
-  AI-enabled Products, AI Evaluation, Human-in-the-loop Workflows,
-  FinTech, Payments, Subscriptions, Marketplace Platforms,
-  Risk Operations, Research, Singapore, Southeast Asia, Vietnam
-">
+<meta name="keywords" content="Ming Cat Chia, Business and Technology Transformation, Customer Experience, Business Operations, Product Operations, Business Analysis, Workflow Improvement, Requirements, UAT, Stakeholder Coordination, AI-enabled Products, FinTech, Singapore, Southeast Asia">
 
 <!-- ═══════════════════════════════════════════════════════════════
      CANONICAL URL
@@ -185,7 +173,7 @@
         {
           "@type": "CreativeWork",
           "name": "Southeast Asia Research Note — Vietnam & Malaysia AI Infrastructure",
-          "description": "Self-directed structured comparison of the policy, energy, talent, and competitive factors behind Malaysia's and Vietnam's AI infrastructure positioning.",
+          "description": "Independent research exercise comparing the policy, energy, talent, and competitive factors behind Malaysia's and Vietnam's AI infrastructure positioning.",
           "author": { "@id": "https://mcchia.github.io/#person" }
         }
       ],
@@ -382,14 +370,13 @@ section[id], .case-study-anchor{scroll-margin-top:90px}
   background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 50%,var(--violet) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.hero-role{
-  font-family:var(--mono);font-size:0.74rem;font-weight:500;
-  color:var(--text2);letter-spacing:0.06em;text-transform:uppercase;
-  display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;
+.hero-domain{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(1rem,1.5vw,1.2rem);font-weight:600;
+  color:var(--teal);letter-spacing:-0.005em;line-height:1.4;text-wrap:balance;
+  margin-bottom:-0.7rem;
 }
-.hero-role::before{
-  content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0;
-}
+.hero-domain span{color:var(--text3);margin:0 0.2rem}
 .hero-h1{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:700;
@@ -859,8 +846,8 @@ footer{
   #hero{padding:4.5rem 1.1rem 2.5rem}
   .hero-name{font-size:2.2rem}
   .hero-h1{font-size:1.3rem}
-  .hero-role{font-size:0.66rem}
-  .hero-role::before{display:none}
+  .hero-domain{font-size:0.86rem}
+  .hero-domain span{margin:0 0.1rem}
   .hero-lead{font-size:0.98rem;line-height:1.65}
   .hero-sub{font-size:0.88rem;line-height:1.65}
   .hero-tags{gap:0.3rem}
@@ -925,8 +912,8 @@ footer{
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-badge">Open to new opportunities · Singapore</div>
-      <div class="hero-role">Customer Experience · Operations · Product · Technology</div>
       <h1 class="hero-name"><span class="hero-name-accent">Ming Cat Chia</span></h1>
+      <p class="hero-domain">Customer Experience <span aria-hidden="true">·</span> Operations <span aria-hidden="true">·</span> Product <span aria-hidden="true">·</span> Technology</p>
       <p class="hero-h1">Business &amp; Technology <em>Transformation Analyst</em></p>
       <p class="hero-lead">I work at the intersection of customer experience, business operations, product, and technology — turning ambiguous customer and operational problems into requirements, workflows, and improvements that teams can execute and measure.</p>
       <p class="hero-sub">My experience spans AI-enabled products, fintech and payment workflows, customer support and escalations, platform operations, product delivery, and high-volume risk investigations — based in Singapore, with a Southeast Asia lens.</p>
@@ -939,7 +926,7 @@ footer{
       </div>
       <div class="hero-ctas">
         <a href="#case-studies" class="btn-primary">View Selected Work</a>
-        <a href="project/uploads/Ming_Cat_Chia_Strategy_Market_Intelligence_Resume.pdf" download class="btn-secondary">Download Resume</a>
+        <a href="project/uploads/Ming_Cat_Chia_Resume.pdf" download="Ming_Cat_Chia_Resume.pdf" class="btn-secondary">Download Resume</a>
         <a href="#contact" class="btn-link">Contact Me</a>
       </div>
     </div>
@@ -960,7 +947,7 @@ footer{
           </defs>
         </svg>
 
-        <!-- Central frame: the working sequence -->
+        <!-- Central frame -->
         <div class="flow-frame">
           <div class="df-header">
             <div class="df-dot" style="background:#ff5f57"></div>
@@ -978,12 +965,12 @@ footer{
           </ol>
         </div>
 
-        <!-- Contexts this sequence has been applied in — all drawn from the Experience section -->
+        <!-- Context cards -->
         <div class="artifact a1"><span class="art-tag" style="color:var(--teal)">[Customer]</span><span class="art-label">Tickets &amp; escalations</span><span class="art-sub">payments · subscriptions</span></div>
         <div class="artifact a2"><span class="art-tag" style="color:var(--blue)">[Product]</span><span class="art-label">Requirements &amp; UAT</span><span class="art-sub">acceptance criteria · QA</span></div>
         <div class="artifact a3"><span class="art-tag" style="color:var(--blue)">[Operations]</span><span class="art-label">Workflow redesign</span><span class="art-sub">ownership · dependencies</span></div>
         <div class="artifact a4"><span class="art-tag" style="color:var(--violet)">[Technology]</span><span class="art-label">AI-enabled features</span><span class="art-sub">search · copyright detection</span></div>
-        <div class="artifact a5"><span class="art-tag" style="color:var(--teal)">[Controls]</span><span class="art-label">High-volume review</span><span class="art-sub">criteria · QA · escalation</span></div>
+        <div class="artifact a5"><span class="art-tag" style="color:var(--teal)">[Controls]</span><span class="art-label">High-volume review</span><span class="art-sub">criteria · evidence · QA</span></div>
         <div class="artifact a6"><span class="art-tag" style="color:var(--violet)">[Region]</span><span class="art-label">Southeast Asia</span><span class="art-sub">Singapore · Vietnam</span></div>
       </div>
     </div>
@@ -1252,7 +1239,7 @@ footer{
             </div>
             <div class="tl-dates">Dec 2020 – Feb 2022</div>
           </div>
-          <p class="tl-desc">High-volume fraud and scam investigations for a global platform — a controlled environment where decisions followed defined criteria and escalation paths, and accuracy was checked through QA.</p>
+          <p class="tl-desc">High-volume fraud and scam investigations for a global platform — a controlled environment where each decision followed defined criteria, rested on the evidence, and was checked through QA.</p>
           <div class="tl-bullets">
             <div class="tl-bullet">Investigated approximately 700 fraud and scam cases daily while maintaining 95% accuracy against compliance and evidentiary standards</div>
             <div class="tl-bullet">Analysed fraud patterns, risk signals, and user behaviour to identify root causes and recurring investigation trends</div>
@@ -1428,8 +1415,8 @@ footer{
     <div class="case-accordion">
       <article class="case-item case-study-anchor" id="case-sea-ai">
         <div class="case-head">
-          <div class="case-kicker">Self-directed research note</div>
-          <h3 class="case-h3">Southeast Asia Market Intelligence Note: Vietnam &amp; Malaysia AI Infrastructure Opportunity</h3>
+          <div class="case-kicker">Independent research exercise</div>
+          <h3 class="case-h3">Southeast Asia Research Note: Vietnam &amp; Malaysia AI Infrastructure Opportunity</h3>
           <p class="case-summary">Context: Malaysia and Vietnam are both positioning for AI infrastructure investment in Southeast Asia, with different policy, energy, and talent trade-offs.</p>
           <div class="case-meta">
             <div class="case-tags"><span class="case-tag blue">Market Analysis</span><span class="case-tag teal">Southeast Asia</span><span class="case-tag">Synthesis</span></div>
@@ -1442,7 +1429,7 @@ footer{
             <div class="case-grid">
               <div class="case-block" style="grid-column:1/-1"><div class="case-label">Key Question</div><p class="case-text">What market, policy, and infrastructure factors explain the current gap between Malaysia's and Vietnam's AI infrastructure positioning — and what would need to be true for Vietnam to close it?</p></div>
               <div class="case-block"><div class="case-label">Analysis Areas</div><div class="case-list"><div class="tl-bullet">Policy &amp; investment incentives</div><div class="tl-bullet">Energy &amp; land capacity</div><div class="tl-bullet">Talent pipeline</div><div class="tl-bullet">Regional competitive positioning</div></div></div>
-              <div class="case-block"><div class="case-label">Output Format</div><p class="case-text">A structured comparison note with sourced findings and a clear recommendation framework — not investment advice.</p></div>
+              <div class="case-block"><div class="case-label">Output Format</div><p class="case-text">Framed as a side-by-side comparison of sourced findings, organised around a recommendation framework. An independent exercise — not investment advice.</p></div>
               <div class="case-block" style="grid-column:1/-1"><div class="case-label">Method</div><p class="case-text">Desk research using English- and Vietnamese-language sources.</p></div>
             </div>
           </div>
@@ -1476,7 +1463,7 @@ footer{
     </div>
     <div class="contact-ctas">
       <a href="mailto:chiamingcat@gmail.com" class="btn-primary">Email Me</a>
-      <a href="project/uploads/Ming_Cat_Chia_Strategy_Market_Intelligence_Resume.pdf" download class="btn-secondary">Download Resume</a>
+      <a href="project/uploads/Ming_Cat_Chia_Resume.pdf" download="Ming_Cat_Chia_Resume.pdf" class="btn-secondary">Download Resume</a>
       <a href="https://www.linkedin.com/in/ming-cat-chia-b46716180/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Connect on LinkedIn</a>
     </div>
   </div>
