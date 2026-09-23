@@ -7,13 +7,12 @@
 
   <!--
     Primary URL — the canonical entry point Google indexes.
-    All section anchors below are supplementary; Google does not
-    follow fragment identifiers (#) but ATS crawlers and AI tools do.
-    priority 1.0 = highest signal to crawlers.
+    Section anchors below are supplementary; Google does not
+    follow fragment identifiers (#) but some crawlers and AI tools do.
   -->
   <url>
     <loc>https://mcchia.github.io/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link
@@ -31,31 +30,39 @@
   <!-- Home -->
   <url>
     <loc>https://mcchia.github.io/#hero</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- About -->
+  <!-- Selected Outcomes -->
   <url>
-    <loc>https://mcchia.github.io/#about</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://mcchia.github.io/#outcomes</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- What I Help With -->
+  <!-- What I Do -->
   <url>
-    <loc>https://mcchia.github.io/#help-with</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://mcchia.github.io/#what-i-do</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Case Studies -->
+  <!-- How I Work -->
+  <url>
+    <loc>https://mcchia.github.io/#how-i-work</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Selected Work -->
   <url>
     <loc>https://mcchia.github.io/#case-studies</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,23 +70,31 @@
   <!-- Experience -->
   <url>
     <loc>https://mcchia.github.io/#experience</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Research & Advisory Notes -->
+  <!-- Technical Fluency -->
   <url>
-    <loc>https://mcchia.github.io/#notes</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://mcchia.github.io/#fluency</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Research &amp; Strategic Analysis -->
+  <url>
+    <loc>https://mcchia.github.io/#research</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Resume (PDF) -->
   <url>
-    <loc>https://mcchia.github.io/project/uploads/Ming_Cat_Chia_Strategy_Market_Intelligence_Resume.pdf</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://mcchia.github.io/project/uploads/Ming_Cat_Chia_Resume.pdf</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -87,7 +102,7 @@
   <!-- Contact -->
   <url>
     <loc>https://mcchia.github.io/#contact</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
